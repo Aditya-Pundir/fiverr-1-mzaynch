@@ -9,12 +9,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home server="https://fiverr-1-mzaynch.herokuapp.com/" />}
+            element={<Home server="https://fiverr-1-mzaynch.herokuapp.com" />}
           />
           <Route
             path="/contact"
             element={
-              <Contact server="https://fiverr-1-mzaynch.herokuapp.com/" />
+              <Contact server="https://fiverr-1-mzaynch.herokuapp.com" />
             }
           />
         </Routes>
