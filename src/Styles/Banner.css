@@ -1,0 +1,70 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  background: var(--dark-blue);
+}
+.imgContainer {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.contact {
+  padding: 2% 4%;
+  text-decoration: none;
+  font-size: medium;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: var(--dark-blue);
+  outline: none;
+  margin: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background: var(--light-blue);
+}
+.slogan {
+  width: 30%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  font-size: xxx-large;
+  color: var(--white);
+}
+
+@media (max-width: 1444px) {
+  .slogan {
+    width: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  .banner {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .slogan {
+    width: 80%;
+    font-size: xx-large;
+    padding: 5%;
+    text-align: center;
+  }
+  .imgContainer {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 640px) {
+  .image {
+    width: 60%;
+    margin-top: 5%;
+  }
+}
+@media (max-width: 446px) {
+  .slogan {
+    font-size: x-large;
+  }
+}

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-align: border-box;
+  font-family: "Roboto", sans-serif;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::selection {
+  color: #d27f11;
+  background-color: #f9d38e;
+}
+:root {
+  --dark-blue: rgb(20 48 93);
+  --shining-blue: #0096ff;
+  --light-blue: #add8e6;
+  --lightest-blue: rgba(173, 216, 230, 0.6);
+  --white: white;
+  --black: black;
+  --shadow: grey;
+}

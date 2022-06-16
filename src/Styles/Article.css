@@ -1,0 +1,23 @@
+.article {
+  width: 15rem;
+  padding: 5%;
+  margin: 5% 10%;
+  display: flex;
+  background: var(--lightest-blue);
+  border-radius: 1rem;
+  flex-direction: column;
+  box-shadow: 0.5rem 0.5rem 1rem 0.01rem var(--shadow);
+}
+.title {
+  font-family: "Roboto", sans-serif;
+}
+.desc {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 640px) {
+  .article {
+    width: 80%;
+    margin: 2% 0;
+  }
+}
