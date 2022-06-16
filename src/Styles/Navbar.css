@@ -21,13 +21,14 @@
 .contact {
   background: var(--light-orange);
   color: var(--dark-purple) !important;
-  padding: 2% 4%;
+  padding: 1rem 1.5rem;
   border-radius: 0.5rem;
 }
 .logo {
   width: 40%;
   background: var(--orange);
 }
+
 .link {
   text-decoration: none;
   color: var(--light-purple);
@@ -35,4 +36,61 @@
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   cursor: pointer;
+}
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 1rem;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+}
+.menu-item {
+  background: var(--dark-purple);
+  height: 0.2rem;
+  width: 1rem;
+  border-radius: 0.5rem;
+}
+
+.responsive {
+  display: flex;
+  position: fixed;
+  background: var(--translucent-white);
+  margin-left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  transition: transform 500ms ease-in-out;
+}
+.responsive-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 20vh;
+}
+.responsive-collapsed {
+  transform: translateX(200%);
+}
+
+@media (max-width: 1000px) {
+  .inner-1 {
+    display: none;
+  }
+  .inner-2 {
+    justify-content: space-around;
+    width: 100%;
+  }
+  .inner-3 {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
 }

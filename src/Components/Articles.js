@@ -18,11 +18,6 @@ function Articles({ server }) {
 
   return (
     <>
-      {/* <div className="headingContainer">
-        <div className="line"></div>
-        <h1 className="heading">Articles</h1>
-        <div className="line"></div>
-      </div> */}
       <div className="container">
         {articles.map((article) => (
           <Article data={article} key={article._id} />

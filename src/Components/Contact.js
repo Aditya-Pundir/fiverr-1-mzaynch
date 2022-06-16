@@ -4,6 +4,7 @@ import "../Styles/Contact.css";
 
 function Contact({ server }) {
   const add = `${server}/api/contacts/add`;
+  document.title = "Nano Book Keepers | Contact";
   return (
     <>
       <div className="outer">
@@ -11,8 +12,8 @@ function Contact({ server }) {
           <form action={add} method="POST" className="form">
             <div className="textContainer">
               <h2 className="heading-connect">Let's connect!</h2>
-              <NavLink className="cross" exact to="/">
-                <span class="material-symbols-outlined">close</span>
+              <NavLink className="cross" exact="true" to="/">
+                <span className="material-symbols-outlined">close</span>
               </NavLink>
             </div>
             <input

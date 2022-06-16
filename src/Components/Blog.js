@@ -3,6 +3,7 @@ import Articles from "./Articles";
 import "../Styles/Blog.css";
 
 function Blog({ server }) {
+  document.title = "Nano Book Keepers | Blog";
   return (
     <>
       <Articles server={server} />
