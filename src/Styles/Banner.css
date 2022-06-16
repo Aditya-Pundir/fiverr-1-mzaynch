@@ -4,7 +4,7 @@
   justify-content: space-around;
   height: 100%;
   width: 100%;
-  background: var(--dark-blue);
+  background: var(--dark-purple);
 }
 .imgContainer {
   height: 80%;
@@ -13,19 +13,10 @@
   align-items: flex-end;
   justify-content: space-between;
 }
-.contact {
-  padding: 2% 4%;
-  text-decoration: none;
-  font-size: medium;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  color: var(--dark-blue);
-  outline: none;
-  margin: 1rem;
-  border: none;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  background: var(--light-blue);
+.image {
+  border-radius: 100%;
+  border-top-right-radius: 10rem;
+  padding: 5%;
 }
 .slogan {
   width: 30%;
@@ -61,10 +52,25 @@
   .image {
     width: 60%;
     margin-top: 5%;
+    border-top-right-radius: 8rem;
+  }
+}
+@media (max-width: 550px) {
+  .image {
+    border-top-right-radius: 6rem;
   }
 }
 @media (max-width: 446px) {
   .slogan {
     font-size: x-large;
+  }
+  .image {
+    border-top-right-radius: 4rem;
+  }
+}
+
+@media (max-width: 250px) {
+  .image {
+    border-top-right-radius: 3rem;
   }
 }

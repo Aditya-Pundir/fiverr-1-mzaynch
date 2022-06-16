@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--white);
+  box-shadow: 0 0.2rem 2rem 0.01rem var(--shadow);
+}
+.inner-container {
+  width: 50%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10vh;
+  border: none;
+  border-radius: 0.2rem;
+}
+.active {
+  color: var(--orange) !important;
+}
+.contact {
+  background: var(--light-orange);
+  color: var(--dark-purple) !important;
+  padding: 2% 4%;
+  border-radius: 0.5rem;
+}
+.logo {
+  width: 40%;
+  background: var(--orange);
+}
+.link {
+  text-decoration: none;
+  color: var(--light-purple);
+  font-size: medium;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
