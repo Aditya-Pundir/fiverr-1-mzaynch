@@ -30,7 +30,7 @@ function Navbar() {
           </NavLink>
         </div>
         <div className="inner-container inner-2">
-          <NavLink exact="true" className="link" to="/">
+          <NavLink exact="true" className="link logo-link" to="/">
             <img className="logo" src="logo192.png" alt="" />
           </NavLink>
 
