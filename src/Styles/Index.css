@@ -17,7 +17,7 @@
   --orange: #e85c4b;
   --light-orange: #ff7d7d;
   --white: white;
-  --translucent-white: rgba(255, 255, 255, 0.8);
+  --translucent-black: rgba(0, 0, 0, 0.8);
   --black: black;
   --shadow: grey;
 }

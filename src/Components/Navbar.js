@@ -7,6 +7,11 @@ function Navbar() {
 
   function collapseNav() {
     responsiveNav.current.classList.toggle("responsive-collapsed");
+    if (responsiveNav.current.classList.length === 2) {
+      document.body.style.overflowY = "scroll";
+    } else {
+      document.body.style.overflowY = "hidden";
+    }
   }
   return (
     <>

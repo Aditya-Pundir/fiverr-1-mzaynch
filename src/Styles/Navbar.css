@@ -1,5 +1,8 @@
 .navbar {
   display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
   background: var(--white);
@@ -58,7 +61,8 @@
 .responsive {
   display: flex;
   position: fixed;
-  background: var(--translucent-white);
+  background: var(--translucent-black);
+  backdrop-filter: blur(0.5rem);
   margin-left: 0;
   flex-direction: column;
   align-items: center;
