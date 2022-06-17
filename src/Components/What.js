@@ -12,12 +12,12 @@ function What() {
             <p className="card-desc">Desc</p>
           </div>
           <div className="card">
-            <span class="material-icons">signal_cellular_alt</span>
+            <span className="material-icons">signal_cellular_alt</span>
             <h3 className="card-title">Title</h3>
             <p className="card-desc">Desc</p>
           </div>
           <div className="card">
-            <span class="material-icons">signal_cellular_alt</span>
+            <span className="material-icons">signal_cellular_alt</span>
             <h3 className="card-title">Title</h3>
             <p className="card-desc">Desc</p>
           </div>

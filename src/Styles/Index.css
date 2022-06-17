@@ -12,17 +12,17 @@
   display: none;
 }
 ::selection {
-  color: var(--light-orange);
+  color: var(--green);
   background-color: var(--light);
 }
 :root {
   --darkest: #291185;
   --dark: #0f42b4;
   --light: #2182db;
-  --green: #00ff2a;
-  --light-orange: greenyellow;
+  --green: greenyellow;
   --white: white;
   --translucent-black: rgba(0, 0, 0, 0.8);
+  --maxlucent-black: rgba(0, 0, 0, 0.4);
   --black: black;
   --shadow: grey;
 }

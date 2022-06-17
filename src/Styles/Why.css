@@ -1,0 +1,33 @@
+.why-container {
+  background: linear-gradient(45deg, var(--light), var(--darkest));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.why-text-container {
+  width: 50%;
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
+}
+.why-desc {
+  margin-top: 2%;
+}
+@media (max-width: 800px) {
+  .why-image {
+    width: 50%;
+    margin-top: 5%;
+  }
+}
+@media (max-width: 446px) {
+  .why-container {
+    flex-direction: column;
+    padding: 5%;
+  }
+  .why-image {
+    width: 60%;
+  }
+  .why-text-container {
+    width: 100%;
+  }
+}

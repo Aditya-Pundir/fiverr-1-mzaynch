@@ -1,0 +1,7 @@
+.articles-container {
+  background: linear-gradient(45deg, var(--darkest), var(--light));
+  padding: 4% 2%;
+}
+.articles {
+  height: 100%;
+}

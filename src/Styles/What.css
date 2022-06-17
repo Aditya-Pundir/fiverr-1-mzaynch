@@ -1,9 +1,9 @@
 .what-container {
   background: linear-gradient(45deg, var(--darkest), var(--light));
-  color: white;
+  color: var(--white);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 5%;
 }
 .cards {
@@ -13,6 +13,7 @@
 }
 .what-text-container {
   width: 50%;
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
 }
 .what-desc {
   margin-top: 2%;
@@ -31,7 +32,7 @@
   transition: all 0.5s linear;
 }
 .card:hover {
-  transform: rotate3d(10, 1, 1, 0deg);
+  transform: rotate3d(10, 0, 0, 0deg);
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
 }
 @media (max-width: 1000px) {

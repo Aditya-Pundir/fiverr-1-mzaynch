@@ -17,13 +17,19 @@ function Articles({ server }) {
   }, [server]);
 
   return (
-    <>
+    <div className="outer-articles">
       <div className="container">
-        {articles.map((article) => (
-          <Article data={article} key={article._id} />
-        ))}
+        {articles.length !== 0 ? (
+          articles.map((article) => (
+            <Article data={article} key={article._id} />
+          ))
+        ) : (
+          <div className="loaderContainer">
+            <img className="loader" src="assets/loader.gif" alt="Loading" />
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  background: conic-gradient(var(--light), var(--darkest));
 }
 .inner {
   display: flex;
@@ -21,23 +22,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--dark);
+  background: var(--maxlucent-black);
+  backdrop-filter: blur(1rem);
   height: 60%;
   width: 100%;
   padding: 10%;
   justify-content: space-evenly;
-  border-radius: 2rem;
-  box-shadow: 1.5rem 1.5rem 5rem 0.5rem var(--black);
+  box-shadow: -2rem 2rem 4rem 0.01rem var(--translucent-black);
 }
 .input {
   width: 100%;
   background: none;
   outline: none;
   border: none;
-  color: var(--light-orange);
-  caret-color: var(--light-orange);
+  color: var(--green);
+  caret-color: var(--green);
   font-size: medium;
-  border-bottom: 2px solid var(--light-orange);
+  border-bottom: 2px solid var(--green);
 }
 .textContainer {
   display: flex;
@@ -50,10 +51,20 @@
   color: var(--green);
   cursor: pointer;
 }
+.plus {
+  color: var(--green);
+  font-size: large;
+  border-bottom: 2px solid var(--green);
+}
+.phoneNum {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
 .submit {
   width: 100%;
   padding: 2%;
-  background: var(--light-orange);
+  background: var(--green);
   color: var(--dark);
   outline: none;
   border: none;
@@ -73,12 +84,8 @@
   }
 }
 @media (max-width: 400px) {
-  .outer {
-    background: var(--dark);
-  }
   .form {
-    height: 80%;
-    border-radius: 0;
+    height: 100%;
     box-shadow: none;
   }
 }

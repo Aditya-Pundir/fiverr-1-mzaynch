@@ -1,6 +1,8 @@
 import React from "react";
 import Banner from "./Banner";
 import What from "./What";
+import Why from "./Why";
+import ServicePackages from "./ServicePackages";
 import "../Styles/Home.css";
 
 function Home({ server }) {
@@ -9,6 +11,8 @@ function Home({ server }) {
     <>
       <Banner server={server} />
       <What />
+      <Why />
+      <ServicePackages />
       {/* <div className="headingContainer">
         <div className="line"></div>
         <h3 className="heading">Here we pay attention to nano detail</h3>

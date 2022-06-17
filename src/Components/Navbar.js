@@ -60,7 +60,7 @@ function Navbar() {
           <NavLink
             activeclassname="active"
             exact="true"
-            className="link"
+            className="link link-responsive"
             to="/"
             onClick={() => {
               collapseNav();
@@ -71,7 +71,7 @@ function Navbar() {
           <NavLink
             activeclassname="active"
             exact="true"
-            className="link"
+            className="link link-responsive"
             to="/blog"
             onClick={() => {
               collapseNav();
@@ -82,7 +82,7 @@ function Navbar() {
           <NavLink
             activeclassname="active"
             exact="true"
-            className="link contact"
+            className="link contact link-responsive"
             to="/contact"
             onClick={() => {
               collapseNav();

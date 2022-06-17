@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: space-evenly;
   background: var(--light);
-  /* box-shadow: 0 0.2rem 2rem 0.01rem var(--shadow); */
 }
 .inner-container {
   width: 50%;
@@ -26,10 +25,11 @@
   color: var(--green) !important;
 }
 .contact {
-  background: var(--light-orange);
+  background: var(--green);
   color: var(--dark) !important;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem;
   border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0.01rem var(--translucent-black);
 }
 .logo {
   width: 40%;
@@ -42,9 +42,11 @@
   font-size: medium;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
-  font-size: large;
-  font-size: large;
+  font-size: larger;
   cursor: pointer;
+}
+.link-responsive {
+  color: var(--light);
 }
 .menu {
   display: none;
