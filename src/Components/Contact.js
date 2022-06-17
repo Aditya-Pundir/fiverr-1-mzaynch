@@ -37,7 +37,7 @@ function Contact({ server }) {
     };
     submit();
     setSubmitted(false);
-  }, [submitted, add, changed, name, email, body, phone]);
+  }, [navigate, submitted, add, changed, name, email, body, phone]);
 
   return (
     <>
