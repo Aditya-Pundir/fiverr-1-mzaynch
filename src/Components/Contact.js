@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "react-phone-number-input/style.css";
 import "../Styles/Contact.css";
 
 function Contact({ server }) {
-  const add = `http://localhost:5000/api/contacts/add`;
+  const add = `${server}/api/contacts/add`;
   const navigate = useNavigate();
   document.title = "Nano Book Keepers | Contact";
   const [changed, setChanged] = useState(false);
