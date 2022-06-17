@@ -1,20 +1,21 @@
-.heading {
+/* .heading {
   font-family: "Roboto", sans-serif;
   text-align: center;
   padding: 3%;
-  color: var(--dark-purple);
+  color: var(--green);
 }
 .headingContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: center;
+  background: radial-gradient(var(--darkest), var(--light));
 }
 .line {
   height: 2px;
   width: 30%;
-  background: var(--dark-purple);
-}
+  background: var(--green);
+} */
 .team-members {
   display: flex;
   align-items: center;
@@ -28,7 +29,7 @@
   align-items: center;
   justify-content: space-evenly;
   box-shadow: 0.1rem 0.1rem 1rem 0.1rem var(--shadow);
-  color: var(--dark-purple);
+  color: var(--dark);
 }
 .member {
   border-radius: 100%;

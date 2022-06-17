@@ -1,0 +1,57 @@
+.what-container {
+  background: linear-gradient(45deg, var(--darkest), var(--light));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.what-text-container {
+  width: 50%;
+}
+.what-desc {
+  margin-top: 2%;
+}
+.card {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 10rem;
+  height: 10rem;
+  background: conic-gradient(var(--darkest), var(--light));
+  color: var(--white);
+  transform: rotate3d(10, 10, 1, 30deg);
+  box-shadow: -0.5rem 0.1rem 2rem 0.01rem var(--translucent-black);
+  transition: all 0.5s linear;
+}
+.card:hover {
+  transform: rotate3d(10, 1, 1, 0deg);
+  box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
+}
+@media (max-width: 1000px) {
+  .what-container {
+    flex-direction: column;
+  }
+  .cards {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5%;
+  }
+  .what-text-container {
+    padding: 5%;
+    width: 90%;
+  }
+}
+@media (max-width: 350px) {
+  .cards {
+    flex-direction: column;
+    height: 80vh;
+  }
+}

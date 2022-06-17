@@ -2,11 +2,12 @@
   display: flex;
   position: sticky;
   top: 0;
+  z-index: 2;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
-  background: var(--white);
-  box-shadow: 0 0.2rem 2rem 0.01rem var(--shadow);
+  background: var(--light);
+  /* box-shadow: 0 0.2rem 2rem 0.01rem var(--shadow); */
 }
 .inner-container {
   width: 50%;
@@ -18,26 +19,31 @@
   border: none;
   border-radius: 0.2rem;
 }
+.inner-2 {
+  width: 30%;
+}
 .active {
-  color: var(--orange) !important;
+  color: var(--green) !important;
 }
 .contact {
   background: var(--light-orange);
-  color: var(--dark-purple) !important;
+  color: var(--dark) !important;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
 }
 .logo {
   width: 40%;
-  background: var(--orange);
+  background: var(--green);
 }
 
 .link {
   text-decoration: none;
-  color: var(--light-purple);
+  color: var(--darkest);
   font-size: medium;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
+  font-size: large;
+  font-size: large;
   cursor: pointer;
 }
 .menu {
@@ -52,7 +58,7 @@
   border: none;
 }
 .menu-item {
-  background: var(--dark-purple);
+  background: var(--green);
   height: 0.2rem;
   width: 1rem;
   border-radius: 0.5rem;
@@ -85,13 +91,10 @@
 
 @media (max-width: 1000px) {
   .inner-1 {
-    display: none;
-  }
-  .inner-2 {
     justify-content: space-around;
     width: 100%;
   }
-  .inner-3 {
+  .inner-2 {
     display: none;
   }
   .menu {

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import "../Styles/Contact.css";
 
 function Contact({ server }) {
   const add = `${server}/api/contacts/add`;
   document.title = "Nano Book Keepers | Contact";
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [body, setBody] = useState("");
+  const [phone, setPhone] = useState(0);
+
   return (
     <>
       <div className="outer">
         <div className="inner">
-          <form action={add} method="POST" className="form">
+          <form className="form">
             <div className="textContainer">
               <h2 className="heading-connect">Let's connect!</h2>
               <NavLink className="cross" exact="true" to="/">
@@ -22,6 +29,8 @@ function Contact({ server }) {
               className="input name"
               placeholder="Name"
               required
+              onChange={(e) => setName(e.target.value)}
+              value={name}
               minLength={4}
               maxLength={30}
             />
@@ -31,8 +40,29 @@ function Contact({ server }) {
               className="input email"
               placeholder="Email"
               required
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
               minLength={6}
               maxLength={30}
+            />
+            {/* <input
+              type="text"
+              pattern="[0-9]*"
+              name="phone"
+              className="input phone"
+              placeholder="+1 1234567899"
+              required
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+              value={phone}
+              minLength={14}
+              maxLength={14}
+            /> */}
+            <PhoneInput
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(Number(e.target.value))}
             />
             <textarea
               name="body"
@@ -41,6 +71,8 @@ function Contact({ server }) {
               className="input body"
               placeholder="Body"
               required
+              onChange={(e) => setBody(e.target.value)}
+              value={body}
               minLength={50}
               maxLength={300}
             />

@@ -15,13 +15,13 @@
   height: 100%;
 }
 .heading-connect {
-  color: var(--orange);
+  color: var(--green);
 }
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--dark-purple);
+  background: var(--dark);
   height: 60%;
   width: 100%;
   padding: 10%;
@@ -47,14 +47,14 @@
 }
 .cross {
   text-decoration: none;
-  color: var(--orange);
+  color: var(--green);
   cursor: pointer;
 }
 .submit {
   width: 100%;
   padding: 2%;
   background: var(--light-orange);
-  color: var(--dark-purple);
+  color: var(--dark);
   outline: none;
   border: none;
   border-radius: 5rem;
@@ -74,7 +74,7 @@
 }
 @media (max-width: 400px) {
   .outer {
-    background: var(--dark-purple);
+    background: var(--dark);
   }
   .form {
     height: 80%;

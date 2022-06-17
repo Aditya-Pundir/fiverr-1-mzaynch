@@ -17,6 +17,18 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className="inner-container inner-1">
+          <NavLink exact="true" className="link logo-link" to="/">
+            <img className="logo" src="logo192.png" alt="" />
+          </NavLink>
+
+          <button className="menu" onClick={() => collapseNav()}>
+            <div className="menu-item"></div>
+            <div className="menu-item"></div>
+            <div className="menu-item"></div>
+          </button>
+        </div>
+
+        <div className="inner-container inner-2">
           <NavLink
             activeclassname="active"
             exact="true"
@@ -33,27 +45,13 @@ function Navbar() {
           >
             Blog
           </NavLink>
-        </div>
-        <div className="inner-container inner-2">
-          <NavLink exact="true" className="link logo-link" to="/">
-            <img className="logo" src="logo192.png" alt="" />
-          </NavLink>
-
-          <button className="menu" onClick={() => collapseNav()}>
-            <div className="menu-item"></div>
-            <div className="menu-item"></div>
-            <div className="menu-item"></div>
-          </button>
-        </div>
-
-        <div className="inner-container inner-3">
           <NavLink
             activeclassname="active"
             exact="true"
             className="link contact"
             to="/contact"
           >
-            Contact
+            Talk to an expert
           </NavLink>
         </div>
       </div>
@@ -90,7 +88,7 @@ function Navbar() {
               collapseNav();
             }}
           >
-            Contact
+            Talk to an expert
           </NavLink>
         </div>
       </div>

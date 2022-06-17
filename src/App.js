@@ -3,6 +3,7 @@ import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import Navbar from "./Components/Navbar";
+import Admin from "./Components/Admin";
 
 function App() {
   const serverLocation = "https://fiverr-1-mzaynch.herokuapp.com";
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home server={serverLocation} />} />
           <Route path="/blog" element={<Blog server={serverLocation} />} />
+          <Route path="/manager" element={<Admin server={serverLocation} />} />
           <Route
             path="/contact"
             element={<Contact server={serverLocation} />}

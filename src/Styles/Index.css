@@ -4,18 +4,23 @@
   box-align: border-box;
   font-family: "Roboto", sans-serif;
 }
+.material-icons {
+  color: var(--green);
+  font-size: xx-large;
+}
 ::-webkit-scrollbar {
   display: none;
 }
 ::selection {
   color: var(--light-orange);
-  background-color: var(--light-purple);
+  background-color: var(--light);
 }
 :root {
-  --dark-purple: #3c2d89;
-  --light-purple: #5f2ee5;
-  --orange: #e85c4b;
-  --light-orange: #ff7d7d;
+  --darkest: #291185;
+  --dark: #0f42b4;
+  --light: #2182db;
+  --green: #00ff2a;
+  --light-orange: greenyellow;
   --white: white;
   --translucent-black: rgba(0, 0, 0, 0.8);
   --black: black;

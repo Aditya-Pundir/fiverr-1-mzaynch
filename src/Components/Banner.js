@@ -6,7 +6,7 @@ function Banner() {
     <div className="banner">
       <h1 className="slogan">Your Destination for Accurate Bookkeeping</h1>
       <div className="imgContainer">
-        <img src="assets/banner.jpg" alt="Pic unavailable" className="image" />
+        <img src="assets/banner.png" alt="Pic unavailable" className="image" />
       </div>
     </div>
   );

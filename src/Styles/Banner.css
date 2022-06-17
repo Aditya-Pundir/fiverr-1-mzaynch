@@ -4,8 +4,9 @@
   justify-content: space-around;
   padding: 1%;
   height: 100%;
-  width: 100%;
-  background: var(--dark-purple);
+  width: 98vw;
+  background: conic-gradient(var(--light), var(--dark), var(--darkest));
+  /* background: radial-gradient(var(--light), var(--darkest)); */
 }
 .imgContainer {
   height: 80%;
@@ -25,6 +26,7 @@
   font-family: "Roboto", sans-serif;
   font-weight: bolder;
   font-size: xxx-large;
+  text-shadow: -0.5rem 0.5rem 0.5rem var(--translucent-black);
   color: var(--white);
 }
 
@@ -37,7 +39,7 @@
   .banner {
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: 98vw;
   }
   .slogan {
     font-size: xx-large;
