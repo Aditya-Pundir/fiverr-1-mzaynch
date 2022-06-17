@@ -1,4 +1,4 @@
-.what-container {
+.aim-container {
   background: linear-gradient(45deg, var(--darkest), var(--light));
   color: var(--white);
   display: flex;
@@ -11,11 +11,11 @@
   justify-content: space-around;
   width: 50%;
 }
-.what-text-container {
+.aim-text-container {
   width: 50%;
   text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
 }
-.what-desc {
+.aim-desc {
   margin-top: 2%;
 }
 .card {
@@ -36,7 +36,7 @@
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
 }
 @media (max-width: 1000px) {
-  .what-container {
+  .aim-container {
     flex-direction: column;
   }
   .cards {
@@ -45,9 +45,27 @@
     width: 100%;
     padding: 5%;
   }
-  .what-text-container {
+  .aim-text-container {
     padding: 5%;
     width: 90%;
+  }
+}
+@media (max-width: 800px) {
+  .aim-image {
+    width: 50%;
+    margin-top: 5%;
+  }
+}
+@media (max-width: 446px) {
+  .aim-container {
+    flex-direction: column;
+    padding: 5%;
+  }
+  .aim-image {
+    width: 60%;
+  }
+  .aim-text-container {
+    width: 100%;
   }
 }
 @media (max-width: 350px) {

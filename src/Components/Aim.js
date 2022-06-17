@@ -1,11 +1,11 @@
 import React from "react";
-import "../Styles/What.css";
+import "../Styles/Aim.css";
 
-function What() {
+function Aim() {
   return (
     <>
-      <div className="what-container">
-        <div className="cards">
+      <div className="aim-container">
+        {/* <div className="cards">
           <div className="card">
             <span className="material-icons">signal_cellular_alt</span>
             <h3 className="card-title">Title</h3>
@@ -21,16 +21,15 @@ function What() {
             <h3 className="card-title">Title</h3>
             <p className="card-desc">Desc</p>
           </div>
-        </div>
-        <div className="what-text-container">
-          <h1>What is Nano Book Keepers?</h1>
-          <p className="what-desc">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga
-            laudantium eum iusto accusantium fugiat dolor tenetur consequatur
-            ut. Fugiat, laudantium aliquam. Quidem ad, mollitia earum,
-            perferendis voluptatem officiis provident magni laboriosam harum
-            excepturi, doloribus rem et sit quas dolor molestiae reprehenderit
-            ea. Voluptas ut quidem est quae nobis laborum quod.
+        </div> */}
+        <img src="assets/aim.png" alt="Our aim" className="aim-image" />
+        <div className="aim-text-container">
+          <h1>Our Aim</h1>
+          <p className="aim-desc">
+            Nano Bookkeepers strives to help small and growing businesses with
+            the backend of their business. <br /> We will organize your books
+            precisely so you can concentrate on your primary business
+            activities.
           </p>
         </div>
       </div>
@@ -38,4 +37,4 @@ function What() {
   );
 }
 
-export default What;
+export default Aim;

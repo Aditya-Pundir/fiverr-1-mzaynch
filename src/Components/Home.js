@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "./Banner";
-import What from "./What";
+import Aim from "./Aim";
 import Why from "./Why";
 import ServicePackages from "./ServicePackages";
 import "../Styles/Home.css";
@@ -10,7 +10,7 @@ function Home({ server }) {
   return (
     <>
       <Banner server={server} />
-      <What />
+      <Aim />
       <Why />
       <ServicePackages />
       {/* <div className="headingContainer">
