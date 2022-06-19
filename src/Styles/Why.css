@@ -7,11 +7,11 @@
   padding: 2%;
 }
 .why-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 50%;
   text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
-}
-.why-desc {
-  margin-top: 2%;
 }
 @media (max-width: 800px) {
   .why-image {
