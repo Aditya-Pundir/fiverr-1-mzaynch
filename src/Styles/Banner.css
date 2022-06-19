@@ -38,10 +38,10 @@
 @media (max-width: 1000px) {
   .banner {
     flex-direction: column;
-    height: 100%;
     width: 100%;
   }
   .slogan {
+    width: 100%;
     font-size: xx-large;
     padding: 5%;
     text-align: center;
@@ -59,11 +59,6 @@
     width: 50%;
     margin-top: 5%;
     border-top-right-radius: 8rem;
-  }
-}
-@media (max-width: 550px) {
-  .image {
-    border-top-right-radius: 6rem;
   }
 }
 @media (max-width: 446px) {

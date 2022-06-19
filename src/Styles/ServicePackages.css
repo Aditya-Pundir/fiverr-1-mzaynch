@@ -64,3 +64,8 @@
     width: 100%;
   }
 }
+@media (max-width: 446px) {
+  .primary-services-heading {
+    font-size: x-large;
+  }
+}

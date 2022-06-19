@@ -94,6 +94,7 @@
 @media (max-width: 400px) {
   .form {
     height: 100%;
+    width: 100%;
     box-shadow: none;
   }
 }

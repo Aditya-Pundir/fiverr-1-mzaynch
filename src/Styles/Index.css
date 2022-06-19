@@ -19,9 +19,9 @@ body {
   background-color: var(--light);
 }
 :root {
-  --darkest: #291185;
-  --dark: #0f42b4;
-  --light: #2182db;
+  --darkest: rgb(11, 0, 100);
+  --dark: rgb(11, 0, 100);
+  --light: rgb(11, 0, 100);
   --green: #4ecfb3;
   --white: white;
   --translucent-black: rgba(0, 0, 0, 0.8);
@@ -29,3 +29,6 @@ body {
   --black: black;
   --shadow: grey;
 }
+/* --darkest: #291185;
+  --dark: #0f42b4;
+  --light: #2182db; */

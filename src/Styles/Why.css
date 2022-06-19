@@ -23,6 +23,9 @@
     flex-direction: column;
     padding: 5%;
   }
+  .why-heading {
+    font-size: x-large;
+  }
   .why-image {
     width: 60%;
   }

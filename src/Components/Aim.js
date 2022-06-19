@@ -24,7 +24,7 @@ function Aim() {
         </div> */}
         <img src="assets/aim.png" alt="Our aim" className="aim-image" />
         <div className="aim-text-container">
-          <h1>Our Aim</h1>
+          <h1 className="aim-heading">Our Aim</h1>
           <p className="aim-desc">
             Nano Bookkeepers strives to help small and growing businesses with
             the backend of their business. <br /> We will organize your books

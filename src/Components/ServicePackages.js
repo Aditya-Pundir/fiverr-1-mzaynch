@@ -5,7 +5,7 @@ function ServicePackages() {
   return (
     <div className="service-packs-outer">
       <div className="service-packs-heading">
-        <h1>Primary Services Offered</h1>
+        <h1 className="primary-services-heading">Primary Services Offered</h1>
         <p className="quote service-packs-subheading ">
           From a startup to a market leader we offer these services on the go
         </p>
