@@ -3,6 +3,7 @@ import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             element={<Contact server={serverLocation} />}
           />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

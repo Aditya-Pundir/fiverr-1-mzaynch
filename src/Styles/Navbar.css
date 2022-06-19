@@ -7,7 +7,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
-  background: var(--light);
+  background: var(--white);
 }
 .inner-container {
   width: 50%;
