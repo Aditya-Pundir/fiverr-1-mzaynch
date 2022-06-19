@@ -18,6 +18,14 @@
   border: none;
   color: var(--white);
 }
+.admin-no-articles-container {
+  height: 80vh;
+  display: flex;
+  padding: 5%;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--white);
+}
 .admin-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

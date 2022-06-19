@@ -45,7 +45,9 @@ function Contact({ server }) {
         <div className="inner">
           <div className="form">
             <div className="textContainer">
-              <h2 className="heading-connect">Let's connect!</h2>
+              <h3 className="heading-connect">
+                Fill the form For free consultation!
+              </h3>
               <NavLink className="cross" exact="true" to="/">
                 <span className="material-symbols-outlined">close</span>
               </NavLink>

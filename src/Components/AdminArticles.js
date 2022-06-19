@@ -4,6 +4,7 @@ import "../Styles/AdminArticles.css";
 
 function AdminArticles({ server }) {
   const getArticles = `${server}/api/articles/getall`;
+  const [fetched, setFetched] = useState(false);
   const [articles, setArticles] = useState([]);
   const [add, setAdd] = useState(false);
 
@@ -14,10 +15,11 @@ function AdminArticles({ server }) {
       })
         .then((response) => response.json())
         .then((data) => data);
+      setFetched(true);
       setArticles(response.reverse());
     };
     getAll();
-  }, [getArticles]);
+  }, [getArticles, fetched]);
 
   return (
     <>
@@ -44,7 +46,11 @@ function AdminArticles({ server }) {
                 articleType="update"
               />
             ))
-          ) : (
+          ) : articles.length === 0 && fetched === true ? (
+            <div className="admin-no-articles-container">
+              <h3>No articles available!</h3>
+            </div>
+          ) : articles.length === 0 && fetched === false ? (
             <div className="admin-loaderContainer">
               <img
                 className="admin-loader"
@@ -52,6 +58,8 @@ function AdminArticles({ server }) {
                 alt="Loading"
               />
             </div>
+          ) : (
+            ""
           )}
         </div>
       </div>
