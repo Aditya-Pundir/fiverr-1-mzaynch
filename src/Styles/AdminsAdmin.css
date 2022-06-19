@@ -36,3 +36,14 @@
   color: var(--white);
   font-size: medium;
 }
+@media (max-width: 650px) {
+  .admins-admin-container {
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .admins-admin-container {
+    width: 100%;
+    padding: 1%;
+  }
+}

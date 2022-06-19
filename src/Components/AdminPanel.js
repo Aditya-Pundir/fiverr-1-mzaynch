@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../Styles/AdminPanel.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AdminArticles from "./AdminArticles";
 import AdminContacts from "./AdminContacts";
 import Admins from "./Admins";
 
 function AdminPanel({ server }) {
   const [content, setContent] = useState("articles");
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -19,6 +20,15 @@ function AdminPanel({ server }) {
         </button>
         <button className="nav-item" onClick={() => setContent("admins")}>
           Admins
+        </button>
+        <button
+          className="nav-item logout"
+          onClick={() => {
+            localStorage.removeItem("_id");
+            navigate("/");
+          }}
+        >
+          Logout
         </button>
       </div>
       <div className="content">

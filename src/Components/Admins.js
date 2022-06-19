@@ -26,6 +26,7 @@ function Admins({ server }) {
       <button className="add-admin" onClick={() => setAddAdmin(true)}>
         +
       </button>
+
       {addAdmin === true ? (
         <AdminsAdmin server={server} data={{ email: "" }} type="add" />
       ) : (

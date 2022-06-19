@@ -57,7 +57,7 @@ function AdminArticle({ server, articleType, data }) {
     if (updateSubmitted === true) {
       main();
     }
-  }, [update, navigate, add, updateSubmitted, title, description]);
+  }, [update, navigate, add, updateSubmitted, title, description, data, type]);
 
   useEffect(() => {
     const main = async () => {
@@ -73,8 +73,12 @@ function AdminArticle({ server, articleType, data }) {
           })
             .then((res) => res.json())
             .then((data) => data);
+          if (response.Success) {
+            navigate("/blog");
+          } else {
+            alert("Something went wrong!");
+          }
           setDeleteArticle(false);
-          navigate("/blog");
         } else {
           setDeleteArticle(false);
         }

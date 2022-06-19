@@ -14,3 +14,14 @@
   cursor: pointer;
   box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
 }
+.logout {
+  background: tomato;
+}
+@media (max-width: 400px) {
+  .admin-nav {
+    flex-direction: column;
+  }
+  .nav-item {
+    padding: 2% 4%;
+  }
+}
