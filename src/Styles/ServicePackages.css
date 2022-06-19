@@ -15,8 +15,12 @@
 }
 .service-packs-heading {
   width: 30%;
-  text-align: center;
+  padding: 1%;
   text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
+}
+.service-packs-subheading {
+  line-height: 1rem;
+  margin-top: 1rem;
 }
 .package {
   background: conic-gradient(var(--darkest), var(--light));

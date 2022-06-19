@@ -6,6 +6,9 @@ function ServicePackages() {
     <div className="service-packs-outer">
       <div className="service-packs-heading">
         <h1>Primary Services Offered</h1>
+        <p className="quote service-packs-subheading ">
+          From a startup to a market leader we offer these services on the go
+        </p>
       </div>
       <div className="service-packs-container">
         <div className="package">
@@ -29,7 +32,8 @@ function ServicePackages() {
           <p className="package-desc">
             Budgeting and forecasting for upcoming years for better
             decision-making. Detailed Cost of production reports for
-            manufacturing businesses.
+            manufacturing businesses. Asset register management and many more
+            customized financial services.
           </p>
         </div>
       </div>

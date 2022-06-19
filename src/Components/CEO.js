@@ -7,8 +7,8 @@ function CEO() {
       <div className="team-members">
         <div className="team-member">
           <p className="ceo-quote">
-            We believe in providing value and helping with decision-making with
-            complete data, facts, and knowledge.
+            We believe in providing value and helping in the decision making
+            with complete data, facts, and knowledge.
           </p>
           <div className="ceo">
             <img className="member" src="assets/ceo.webp" alt="CEO" />
