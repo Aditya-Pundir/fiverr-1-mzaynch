@@ -6,7 +6,7 @@ function Why() {
     <>
       <div className="why-container">
         <div className="why-text-container">
-          <h1>Why Nano Book Keepers?</h1>
+          <h1>Why Nano Bookkeepers?</h1>
           <p className="why-desc">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga
             laudantium eum iusto accusantium fugiat dolor tenetur consequatur

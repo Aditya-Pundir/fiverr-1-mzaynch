@@ -1,0 +1,60 @@
+.admin-article {
+  width: 15rem;
+  padding: 5%;
+  margin: 5% 10%;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(45deg, var(--darkest), var(--light));
+  flex-direction: column;
+  transform: rotate3d(10, 10, 1, 30deg);
+  transition: all 0.5s linear;
+  box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
+  color: var(--white);
+  font-size: large;
+}
+.delete-article {
+  color: tomato;
+  cursor: pointer;
+}
+.admin-article:hover {
+  transform: rotate3d(10, 1, 1, 0deg);
+  box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
+}
+.admin-title {
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--white);
+  font-size: large;
+  padding: 2%;
+  border-bottom: 2px solid var(--green);
+}
+.admin-desc {
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--white);
+  font-size: medium;
+  padding: 2%;
+  height: 10rem;
+  border-bottom: 2px solid var(--green);
+}
+.admin-article-submit {
+  background: var(--green);
+  margin-top: 10%;
+  border: none;
+  outline: none;
+  padding: 2%;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .admin-article {
+    width: 80%;
+    margin: 2% 0;
+  }
+}

@@ -4,7 +4,7 @@
   justify-content: space-around;
   padding: 1%;
   height: 100%;
-  width: 98vw;
+  width: 100%;
   background: conic-gradient(var(--light), var(--dark), var(--darkest));
   /* background: radial-gradient(var(--light), var(--darkest)); */
 }
@@ -39,7 +39,7 @@
   .banner {
     flex-direction: column;
     height: 100%;
-    width: 98vw;
+    width: 100%;
   }
   .slogan {
     font-size: xx-large;

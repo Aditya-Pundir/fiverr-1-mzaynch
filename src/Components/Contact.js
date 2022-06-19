@@ -102,7 +102,7 @@ function Contact({ server }) {
               cols="50"
               rows="10"
               className="input body"
-              placeholder="Body"
+              placeholder="Briefly explain your business and requirements"
               required
               onChange={(e) => {
                 setChanged(true);

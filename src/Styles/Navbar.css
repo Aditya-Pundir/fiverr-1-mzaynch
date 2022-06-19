@@ -1,4 +1,5 @@
 .navbar {
+  padding: 2%;
   display: flex;
   position: sticky;
   top: 0;
@@ -14,26 +15,25 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 10vh;
+  height: 8vh;
   border: none;
-  border-radius: 0.2rem;
 }
 .inner-2 {
-  width: 30%;
+  width: 40%;
 }
 .active {
   color: var(--green) !important;
 }
 .contact {
   background: var(--green);
-  color: var(--dark) !important;
+  color: var(--darkest) !important;
   padding: 0.8rem;
   border-radius: 0.5rem;
   box-shadow: 0.1rem 0.1rem 1rem 0.01rem var(--translucent-black);
 }
 .logo {
   width: 40%;
-  background: var(--green);
+  background: var(--white);
 }
 
 .link {
@@ -101,5 +101,18 @@
   }
   .menu {
     display: flex;
+  }
+  .logo {
+    width: 30%;
+  }
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 40%;
+  }
+}
+@media (max-width: 400px) {
+  .logo {
+    width: 50%;
   }
 }

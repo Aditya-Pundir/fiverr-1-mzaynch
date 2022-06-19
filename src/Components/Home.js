@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import Aim from "./Aim";
+import ContactAfterWhy from "./ContactAfterWhy";
 import Why from "./Why";
 import ServicePackages from "./ServicePackages";
 import "../Styles/Home.css";
@@ -11,6 +12,7 @@ function Home({ server }) {
     <>
       <Banner server={server} />
       <Aim />
+      <ContactAfterWhy />
       <Why />
       <ServicePackages />
       {/* <div className="headingContainer">

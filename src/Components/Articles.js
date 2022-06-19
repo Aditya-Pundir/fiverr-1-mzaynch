@@ -11,7 +11,7 @@ function Articles({ server }) {
         headers: { Accept: "*/*" },
       });
       const data = await response.json();
-      setArticles(data);
+      setArticles(data.reverse());
     }
     getArticles();
   }, [server]);

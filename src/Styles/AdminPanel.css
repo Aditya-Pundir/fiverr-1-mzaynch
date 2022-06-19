@@ -1,0 +1,16 @@
+.admin-nav {
+  display: flex;
+  align-items: center;
+  padding: 2%;
+  gap: 1rem;
+}
+.nav-item {
+  background: var(--green);
+  border: none;
+  outline: none;
+  padding: 1% 2%;
+  font-size: large;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
+}

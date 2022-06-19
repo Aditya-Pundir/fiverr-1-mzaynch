@@ -37,9 +37,6 @@
   transform: rotate3d(10, 0, 0, 0deg);
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
 }
-.price-scale {
-  margin-top: -2rem;
-}
 @media (max-width: 1000px) {
   .service-packs-outer {
     flex-direction: column;

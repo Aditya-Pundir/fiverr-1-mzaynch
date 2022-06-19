@@ -35,6 +35,12 @@
   transform: rotate3d(10, 0, 0, 0deg);
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
 }
+.quote {
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  color: var(--green);
+}
 @media (max-width: 1000px) {
   .aim-container {
     flex-direction: column;

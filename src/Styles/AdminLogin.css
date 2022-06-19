@@ -1,0 +1,55 @@
+.admin-outer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(var(--light), var(--darkest));
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--maxlucent-black);
+  backdrop-filter: blur(1rem);
+  height: 60%;
+  width: 25%;
+  padding: 2%;
+  justify-content: space-evenly;
+  box-shadow: -2rem 2rem 4rem 0admin-01rem var(--translucent-black);
+}
+.admin-input {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--green);
+  caret-color: var(--green);
+  font-size: medium;
+  border-bottom: 2px solid var(--green);
+}
+.admin-submit {
+  width: 100%;
+  padding: 2%;
+  background: var(--green);
+  color: var(--dark);
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .admin-form {
+    height: 50%;
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  .admin-form {
+    height: 100%;
+    box-shadow: none;
+  }
+}

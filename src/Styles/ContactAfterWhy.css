@@ -1,0 +1,17 @@
+.contact-after-why-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, var(--darkest), var(--light));
+  padding: 1%;
+}
+.contact-btn {
+  background: var(--green);
+  color: var(--darkest) !important;
+  text-decoration: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-size: medium;
+  font-weight: 600;
+  box-shadow: 0.1rem 0.1rem 1rem 0.01rem var(--translucent-black);
+}

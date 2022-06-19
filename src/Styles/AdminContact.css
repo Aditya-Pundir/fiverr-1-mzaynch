@@ -1,0 +1,61 @@
+.admin-contact-outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--darkest);
+  margin: 5%;
+  padding: 2%;
+  height: 8rem;
+  color: var(--green);
+  transition: all 0.5s linear;
+  transform: rotate3d(10, 10, 0, 30deg);
+  box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
+}
+.admin-contact-outer-container:hover {
+  transform: rotate3d(10, 1, 1, 0deg);
+  box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
+}
+.admin-contact-inner-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: large;
+  align-items: center;
+  gap: 1rem;
+}
+.pwdMatch {
+  color: tomato;
+}
+.pwdMatchHidden {
+  display: none;
+}
+.admins-admin-submit {
+  background: var(--green);
+  border: none;
+  outline: none;
+  padding: 1% 2%;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: large;
+  text-align: center;
+}
+.admin-loaderContainer {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.admin-loader {
+  width: 10%;
+}
+@media (max-width: 400px) {
+  .admin-contact-inner-container {
+    font-size: medium;
+    gap: 0.5rem;
+  }
+}

@@ -18,7 +18,7 @@ function Navbar() {
       <div className="navbar">
         <div className="inner-container inner-1">
           <NavLink exact="true" className="link logo-link" to="/">
-            <img className="logo" src="logo192.png" alt="" />
+            <img className="logo" src="logo-2.jpg" alt="Nano Bookkeepers" />
           </NavLink>
 
           <button className="menu" onClick={() => collapseNav()}>

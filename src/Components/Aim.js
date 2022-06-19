@@ -31,6 +31,7 @@ function Aim() {
             precisely so you can concentrate on your primary business
             activities.
           </p>
+          <h4 className="quote">"We pay attention to nano details"</h4>
         </div>
       </div>
     </>
