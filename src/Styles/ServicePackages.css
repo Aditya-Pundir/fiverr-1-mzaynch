@@ -26,8 +26,8 @@
   justify-content: space-between;
   transform: rotate3d(10, 10, 1, 30deg);
   box-shadow: -1rem 0.5rem 2rem 0.01rem var(--translucent-black);
-  height: 18rem;
-  width: 15rem;
+  height: 20rem;
+  width: 18rem;
   padding: 2%;
   text-align: center;
   font-size: large;
@@ -43,7 +43,7 @@
   }
   .service-packs-container {
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 90%;
     padding: 5%;
   }

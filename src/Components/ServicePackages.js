@@ -5,50 +5,32 @@ function ServicePackages() {
   return (
     <div className="service-packs-outer">
       <div className="service-packs-heading">
-        <h1>Service Packages</h1>
+        <h1>Primary Services Offered</h1>
       </div>
       <div className="service-packs-container">
         <div className="package">
-          <h2 className="package-heading">Start</h2>
+          <h2 className="package-heading">Monthly Bookkeeping Support</h2>
           <p className="package-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            magnam.
+            Ongoing monthly bookkeeping support to help your business manage
+            books and categorize transactions as they happen and prepare
+            Financial Statements monthly.
           </p>
-          <div className="package-specs">
-            <p className="package-spec">Spec 1</p>
-            <p className="package-spec">Spec 2</p>
-            <p className="package-spec">Spec 3</p>
-          </div>
-          <h2 className="price">$12.50</h2>
-          <p className="price-scale">per month</p>
         </div>
         <div className="package">
-          <h2 className="package-heading">Start</h2>
+          <h2 className="package-heading">Backlog Bookkeeping</h2>
           <p className="package-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            magnam.
+            Rectifying errors in bookkeeping and helping with lagging backlog
+            categorization of transactions and financial statements preparations
+            for the period.
           </p>
-          <div className="package-specs">
-            <p className="package-spec">Spec 1</p>
-            <p className="package-spec">Spec 2</p>
-            <p className="package-spec">Spec 3</p>
-          </div>
-          <h2 className="price">$12.50</h2>
-          <p className="price-scale">per month</p>
         </div>
         <div className="package">
-          <h2 className="package-heading">Start</h2>
+          <h2 className="package-heading">Budgeting and Forecasting</h2>
           <p className="package-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            magnam.
+            Budgeting and forecasting for upcoming years for better
+            decision-making. Detailed Cost of production reports for
+            manufacturing businesses.
           </p>
-          <div className="package-specs">
-            <p className="package-spec">Spec 1</p>
-            <p className="package-spec">Spec 2</p>
-            <p className="package-spec">Spec 3</p>
-          </div>
-          <h2 className="price">$12.50</h2>
-          <p className="price-scale">per month</p>
         </div>
       </div>
     </div>

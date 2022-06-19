@@ -1,5 +1,4 @@
 .why-container {
-  background: linear-gradient(45deg, var(--light), var(--darkest));
   color: var(--white);
   display: flex;
   align-items: center;

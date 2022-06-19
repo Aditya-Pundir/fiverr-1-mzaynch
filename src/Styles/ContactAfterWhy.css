@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, var(--darkest), var(--light));
   padding: 1%;
 }
 .contact-btn {
