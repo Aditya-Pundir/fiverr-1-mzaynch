@@ -39,6 +39,7 @@ function Admins({ server }) {
             data={admin}
             key={admin._id}
             type="update"
+            num={admins.length}
           />
         ))
       ) : (

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/AdminsAdmin.css";
 
-function AdminsAdmin({ server, data, type }) {
+function AdminsAdmin({ server, data, type, num }) {
   const resetPassUrl = `${server}/api/admin/resetpassword`;
   const deleteAdminUrl = `${server}/api/admin/delete`;
   const addAdminUrl = `${server}/api/admin/create`;
@@ -127,12 +127,16 @@ function AdminsAdmin({ server, data, type }) {
       <div className="admins-admin-heading">
         <h4 className="admins-admin-email">{data.email}</h4>
         {type === "update" ? (
-          <span
-            className="material-icons delete"
-            onClick={() => setToDelete(true)}
-          >
-            delete
-          </span>
+          num > 1 ? (
+            <span
+              className="material-icons delete"
+              onClick={() => setToDelete(true)}
+            >
+              delete
+            </span>
+          ) : (
+            ""
+          )
         ) : (
           ""
         )}

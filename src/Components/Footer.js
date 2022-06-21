@@ -13,7 +13,7 @@ function Footer() {
             className="footer-logo"
           />
           <h2 className="footer-heading">
-            Your Destination for Accurate Bookkeeping
+            Your destination for outsourced accurate bookkeeping
           </h2>
         </div>
         <p className="footer-description">
