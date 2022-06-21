@@ -12,7 +12,14 @@ body {
   background: linear-gradient(45deg, var(--darkest), var(--light));
 }
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--green);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--green), var(--darkest));
+  border-radius: 10px;
 }
 ::selection {
   color: var(--green);
@@ -29,6 +36,8 @@ body {
   --black: black;
   --shadow: grey;
 }
-/* --darkest: #291185;
-  --dark: #0f42b4;
-  --light: #2182db; */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
