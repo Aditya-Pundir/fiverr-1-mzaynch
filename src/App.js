@@ -7,8 +7,7 @@ import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
 
 function App() {
-  const serverLocation = "http://localhost:5000";
-  // const serverLocation = "https://fiverr-1-mzaynch.herokuapp.com";
+  const serverLocation = "https://fiverr-1-mzaynch.herokuapp.com";
   return (
     <>
       <Router>
