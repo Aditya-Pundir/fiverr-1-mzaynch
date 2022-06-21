@@ -24,7 +24,9 @@ function Footer() {
           Talk to an expert
         </NavLink>
         <div className="copyright-container">
-          <span>Copyright &copy; 2022 Nano Bookkeepers</span>
+          <span className="copyright">
+            Copyright &copy; 2022 Nano Bookkeepers
+          </span>
         </div>
       </div>
     </div>

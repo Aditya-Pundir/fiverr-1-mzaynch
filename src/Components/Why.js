@@ -27,6 +27,7 @@ function Why() {
           </div>
           <div className="why-point">
             <h3 className="why-sub-heading">A partner that grows with you</h3>
+
             <p className="why-desc">
               We match our engagement and level of support to your business
               needs. Whether you’re just starting or scaling quickly, we’re here

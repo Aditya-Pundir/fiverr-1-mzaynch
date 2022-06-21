@@ -120,7 +120,7 @@ function AdminsAdmin({ server, data, type, num }) {
     };
     main();
     setToDelete(false);
-  }, [navigate, adminPass, data, deleteAdminUrl, toDelete]);
+  }, [navigate, adminPass, data, toDelete, deleteAdminUrl]);
 
   return (
     <div className="admins-admin-container">
