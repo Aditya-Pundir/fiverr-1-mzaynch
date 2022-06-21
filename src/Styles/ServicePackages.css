@@ -1,5 +1,6 @@
 .service-packs-outer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: linear-gradient(45deg, var(--darkest), var(--light));
@@ -14,7 +15,7 @@
   justify-content: space-between;
 }
 .service-packs-heading {
-  width: 30%;
+  /* width: 30%; */
   padding: 1%;
   text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
 }
@@ -61,7 +62,7 @@
     height: 130vh;
   }
   .service-packs-heading {
-    width: 100%;
+    width: 90%;
   }
 }
 @media (max-width: 446px) {

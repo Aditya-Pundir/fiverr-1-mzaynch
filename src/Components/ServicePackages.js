@@ -33,7 +33,7 @@ function ServicePackages() {
             Budgeting and forecasting for upcoming years for better
             decision-making. Detailed Cost of production reports for
             manufacturing businesses. Asset register management and many more
-            customized financial services.
+            customized financial reporting services.
           </p>
         </div>
       </div>

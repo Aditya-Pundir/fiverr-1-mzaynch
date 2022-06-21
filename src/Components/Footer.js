@@ -23,6 +23,9 @@ function Footer() {
         <NavLink className="footer-contact-btn" exact="true" to="/contact">
           Talk to an expert
         </NavLink>
+        <div className="copyright-container">
+          <span>Copyright &copy; 2022 Nano Bookkeepers</span>
+        </div>
       </div>
     </div>
   );
