@@ -24,7 +24,7 @@ function Contact({ server }) {
             name: name,
             email: email,
             body: body,
-            phone: String(phone),
+            phone: Number(phone),
           }),
         })
           .then((res) => res.json())

@@ -47,6 +47,8 @@ function AdminContact({ server, data }) {
         <h4 className="admin-contact-name">{data.name}</h4>
         <span className="material-icons arrow">east</span>
         <h4 className="admin-contact-email">{data.email}</h4>
+        <span className="material-icons arrow">east</span>
+        <h4 className="admin-contact-phone">+{data.phone}</h4>
       </div>
       <p className="admin-contact-body">{data.body}</p>
     </div>

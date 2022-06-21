@@ -15,8 +15,8 @@ function AdminArticles({ server }) {
       })
         .then((response) => response.json())
         .then((data) => data);
-      setFetched(true);
       setArticles(response.reverse());
+      setFetched(true);
     };
     getAll();
   }, [getArticles, fetched]);
