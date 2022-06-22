@@ -28,7 +28,7 @@ function ArticlePage({ server }) {
     if (!fetched) {
       main();
     }
-  }, [article, id, getArticleUrl]);
+  }, [article, id, getArticleUrl, fetched]);
 
   return (
     <div className="article-page-container">
