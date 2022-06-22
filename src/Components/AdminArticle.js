@@ -19,10 +19,10 @@ function AdminArticle({ server, articleType, data }) {
   useEffect(() => {
     const main = async () => {
       var filteredHeaders = headers.filter((element) => {
-        return element != "";
+        return element !== "";
       });
       var filteredParagraphs = paragraphs.filter((element) => {
-        return element != "";
+        return element !== "";
       });
       if (
         data.title !== title ||
@@ -93,7 +93,19 @@ function AdminArticle({ server, articleType, data }) {
     if (updateSubmitted === true) {
       main();
     }
-  }, [update, navigate, add, updateSubmitted, title, description, data, type]);
+  }, [
+    update,
+    navigate,
+    add,
+    updateSubmitted,
+    title,
+    description,
+    data,
+    type,
+    articleType,
+    headers,
+    paragraphs,
+  ]);
 
   useEffect(() => {
     const main = async () => {
