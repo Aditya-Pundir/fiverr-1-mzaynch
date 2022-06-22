@@ -32,7 +32,12 @@ function AdminArticles({ server }) {
           {add === true ? (
             <AdminArticle
               server={server}
-              data={{ title: "", description: "" }}
+              data={{
+                title: "",
+                description: "",
+                headings: [],
+                paragraphs: [],
+              }}
               articleType="add"
             />
           ) : (

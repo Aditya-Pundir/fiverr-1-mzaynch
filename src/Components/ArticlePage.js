@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 function ArticlePage({ server }) {
   const { id } = useParams();
   const getArticleUrl = `${server}/api/articles/get`;
+  const [fetched, setFetched] = useState(false);
   const [article, setArticle] = useState({});
 
   useEffect(() => {
@@ -18,18 +19,31 @@ function ArticlePage({ server }) {
         .then((data) => data)
         .catch((err) => console.log(err));
       if (response.article) {
+        console.log(response.article);
+        setFetched(true);
         return setArticle(response.article);
       }
       console.log(response.Error);
     };
-    main();
+    if (!fetched) {
+      main();
+    }
   }, [article, id, getArticleUrl]);
 
   return (
     <div className="article-page-container">
       <h2 className="article-page-heading">{article.title}</h2>
-      <h4 className="article-page-subheading">{article.subtitle}</h4>
       <p className="article-page-description">{article.description}</p>
+      {article.headings
+        ? article.headings.map((heading, i) => {
+            return (
+              <div className="articles-para-container" key={i}>
+                <h3 className="article-heading">{heading}</h3>
+                <p className="article-para">{article.paragraphs[i]}</p>
+              </div>
+            );
+          })
+        : ""}
     </div>
   );
 }

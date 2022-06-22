@@ -1,12 +1,12 @@
 .admin-article {
-  width: 30rem;
+  width: 80%;
   padding: 2%;
   margin: 5% 10%;
   display: flex;
   justify-content: space-between;
   background: linear-gradient(45deg, var(--darkest), var(--light));
   flex-direction: column;
-  transform: rotate3d(10, 10, 1, 30deg);
+  /* transform: rotate3d(10, 10, 1, 30deg); */
   transition: all 0.5s linear;
   box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
   color: var(--white);
@@ -20,8 +20,31 @@
   transform: rotate3d(10, 1, 1, 0deg);
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
 }
+.expand {
+  cursor: pointer;
+  width: 2rem;
+  margin: 2%;
+}
+.add-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.admin-add-article-content {
+  border-radius: 100%;
+  height: 3rem;
+  width: 3rem;
+  font-size: x-large;
+  text-align: center;
+  box-shadow: -0.5rem 0.5rem 2rem 0.01rem var(--translucent-black);
+  cursor: pointer;
+  background: var(--green);
+  outline: none;
+  border: none;
+  color: var(--white);
+}
 .admin-title {
-  resize: vertical;
   font-family: "Roboto", sans-serif;
   border: none;
   outline: none;
@@ -32,18 +55,32 @@
   border-bottom: 2px solid var(--green);
   overflow: auto;
   font-weight: bold;
-}
-.admin-subtitle {
   resize: vertical;
-  font-family: "Roboto", sans-serif;
-  border: none;
+}
+.admin-section-container {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.admin-section-content {
+  width: 100%;
+  resize: vertical;
   outline: none;
-  background: none;
-  color: var(--white);
-  font-size: large;
-  padding: 2%;
+  border: none;
   border-bottom: 2px solid var(--green);
-  overflow: auto;
+  background: none;
+  font-size: medium;
+  margin-top: 2rem;
+  color: var(--white);
+}
+.admin-header {
+  font-weight: bold;
+}
+.admin-para {
+  height: 10rem;
 }
 .admin-desc {
   resize: vertical;
@@ -60,7 +97,6 @@
 }
 .admin-article-submit {
   background: var(--green);
-  margin-top: 10%;
   border: none;
   outline: none;
   padding: 2%;

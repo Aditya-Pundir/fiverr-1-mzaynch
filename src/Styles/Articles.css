@@ -1,5 +1,5 @@
 .outer-articles {
-  min-height: 100vh;
+  min-height: 50vh;
 }
 .container {
   display: grid;
@@ -19,7 +19,7 @@
   width: 10%;
 }
 .no-articles-container {
-  height: 80vh;
+  height: 50vh;
   display: flex;
   padding: 5%;
   align-items: flex-start;

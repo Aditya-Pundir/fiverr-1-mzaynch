@@ -9,19 +9,33 @@ function AdminArticle({ server, articleType, data }) {
   const navigate = useNavigate();
   const [type, setType] = useState(articleType);
   const [title, setTitle] = useState(data.title);
-  const [subTitle, setSubTitle] = useState(data.subtitle);
   const [deleteArticle, setDeleteArticle] = useState(false);
   const [updateSubmitted, setUpdateSubmitted] = useState(false);
   const [description, setDescription] = useState(data.description);
+  const [headers, setHeaders] = useState([...data.headings]);
+  const [paragraphs, setParagraphs] = useState([...data.paragraphs]);
+  const [visible, setVisible] = useState(articleType === "add" ? true : false);
+
   useEffect(() => {
     const main = async () => {
+      var filteredHeaders = headers.filter((element) => {
+        return element != "";
+      });
+      var filteredParagraphs = paragraphs.filter((element) => {
+        return element != "";
+      });
       if (
         data.title !== title ||
         data.description !== description ||
-        data.subtitle !== subTitle
+        data.headings !== filteredHeaders ||
+        data.paragraphs !== filteredParagraphs
       ) {
         let response;
-        if (type === "update") {
+        if (articleType === "update") {
+          // if (filteredParagraphs.length !== filteredHeaders.length) {
+          //   return alert("Please fill the content in pairs!");
+          // }
+
           response = await fetch(update, {
             method: "PUT",
             headers: {
@@ -30,9 +44,10 @@ function AdminArticle({ server, articleType, data }) {
             },
             body: JSON.stringify({
               _id: data._id,
-              subtitle: subTitle,
               title,
               description,
+              headings: filteredHeaders,
+              paragraphs: filteredParagraphs,
             }),
           })
             .then((res) => res.json())
@@ -40,17 +55,24 @@ function AdminArticle({ server, articleType, data }) {
             .catch((err) => console.log(err));
           if (response.article) {
             alert("Changes commited successfully!");
+          } else if (response.Error) {
+            alert(response.Error);
           } else {
             alert("Please reload your page and try again!");
           }
-        } else if (type === "add") {
+        } else if (articleType === "add") {
           response = await fetch(add, {
             method: "POST",
             headers: {
               Accept: "*/*",
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ title, subtitle: subTitle, description }),
+            body: JSON.stringify({
+              title,
+              description,
+              headings: filteredHeaders,
+              paragraphs: filteredParagraphs,
+            }),
           })
             .then((res) => res.json())
             .then((data) => data)
@@ -59,6 +81,8 @@ function AdminArticle({ server, articleType, data }) {
             setType("update");
             alert("Changes commited successfully!");
             navigate("/blog");
+          } else if (response.Error) {
+            alert(response.Error);
           } else {
             alert("Please reload your page and try again!");
           }
@@ -69,17 +93,7 @@ function AdminArticle({ server, articleType, data }) {
     if (updateSubmitted === true) {
       main();
     }
-  }, [
-    update,
-    navigate,
-    subTitle,
-    add,
-    updateSubmitted,
-    title,
-    description,
-    data,
-    type,
-  ]);
+  }, [update, navigate, add, updateSubmitted, title, description, data, type]);
 
   useEffect(() => {
     const main = async () => {
@@ -122,22 +136,79 @@ function AdminArticle({ server, articleType, data }) {
       ) : (
         ""
       )}
-
       <textarea
         className="admin-title"
         value={title}
+        placeholder="Title"
         onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        className="admin-subtitle"
-        value={subTitle}
-        onChange={(e) => setSubTitle(e.target.value)}
       />
       <textarea
         className="admin-desc"
         value={description}
+        placeholder="Description"
         onChange={(e) => setDescription(e.target.value)}
       />
+
+      {visible ? (
+        <span
+          className="material-icons expand"
+          onClick={() => setVisible(false)}
+        >
+          expand_less
+        </span>
+      ) : (
+        <span
+          className="material-icons expand"
+          onClick={() => setVisible(true)}
+        >
+          expand_more
+        </span>
+      )}
+
+      {visible ? (
+        <div className="admin-article-content-container">
+          {headers.length > 0
+            ? headers.map((header, i) => {
+                return (
+                  <div className="admin-section-container" key={i}>
+                    <textarea
+                      className="admin-section-content admin-header"
+                      value={header}
+                      placeholder="Heading"
+                      onChange={(e) => {
+                        let data = [...headers];
+                        data[i] = e.target.value;
+                        setHeaders(data);
+                      }}
+                    />
+                    <textarea
+                      className="admin-section-content admin-para"
+                      value={paragraphs[i]}
+                      placeholder="Paragraph"
+                      onChange={(e) => {
+                        let data = [...paragraphs];
+                        data[i] = e.target.value;
+                        setParagraphs(data);
+                      }}
+                    />
+                  </div>
+                );
+              })
+            : ""}
+          <div
+            className="add-content-container"
+            onClick={() => {
+              setHeaders([...headers, ""]);
+              setParagraphs([...paragraphs, ""]);
+            }}
+          >
+            <button className="admin-add-article-content">+</button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
       <button
         className="admin-article-submit"
         onClick={() => setUpdateSubmitted(true)}
