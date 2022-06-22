@@ -6,3 +6,6 @@
   flex-direction: column;
   gap: 1rem;
 }
+.articles-para-container {
+  padding: 2%;
+}
