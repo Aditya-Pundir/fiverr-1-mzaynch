@@ -1,6 +1,6 @@
 .admin-article {
-  width: 15rem;
-  padding: 5%;
+  width: 30rem;
+  padding: 2%;
   margin: 5% 10%;
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,20 @@
   font-size: large;
   padding: 2%;
   border-bottom: 2px solid var(--green);
+  overflow: auto;
+  font-weight: bold;
+}
+.admin-subtitle {
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--white);
+  font-size: large;
+  padding: 2%;
+  border-bottom: 2px solid var(--green);
+  overflow: auto;
 }
 .admin-desc {
   resize: vertical;
@@ -42,6 +56,7 @@
   padding: 2%;
   height: 10rem;
   border-bottom: 2px solid var(--green);
+  overflow: auto;
 }
 .admin-article-submit {
   background: var(--green);

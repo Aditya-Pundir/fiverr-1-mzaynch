@@ -9,12 +9,17 @@ function AdminArticle({ server, articleType, data }) {
   const navigate = useNavigate();
   const [type, setType] = useState(articleType);
   const [title, setTitle] = useState(data.title);
+  const [subTitle, setSubTitle] = useState(data.subtitle);
   const [deleteArticle, setDeleteArticle] = useState(false);
   const [updateSubmitted, setUpdateSubmitted] = useState(false);
   const [description, setDescription] = useState(data.description);
   useEffect(() => {
     const main = async () => {
-      if (data.title !== title || data.description !== description) {
+      if (
+        data.title !== title ||
+        data.description !== description ||
+        data.subtitle !== subTitle
+      ) {
         let response;
         if (type === "update") {
           response = await fetch(update, {
@@ -23,10 +28,16 @@ function AdminArticle({ server, articleType, data }) {
               Accept: "*/*",
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ _id: data._id, title, description }),
+            body: JSON.stringify({
+              _id: data._id,
+              subtitle: subTitle,
+              title,
+              description,
+            }),
           })
             .then((res) => res.json())
-            .then((data) => data);
+            .then((data) => data)
+            .catch((err) => console.log(err));
           if (response.article) {
             alert("Changes commited successfully!");
           } else {
@@ -39,10 +50,11 @@ function AdminArticle({ server, articleType, data }) {
               Accept: "*/*",
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ title, description }),
+            body: JSON.stringify({ title, subtitle: subTitle, description }),
           })
             .then((res) => res.json())
-            .then((data) => data);
+            .then((data) => data)
+            .catch((err) => console.log(err));
           if (response.Success) {
             setType("update");
             alert("Changes commited successfully!");
@@ -57,7 +69,17 @@ function AdminArticle({ server, articleType, data }) {
     if (updateSubmitted === true) {
       main();
     }
-  }, [update, navigate, add, updateSubmitted, title, description, data, type]);
+  }, [
+    update,
+    navigate,
+    subTitle,
+    add,
+    updateSubmitted,
+    title,
+    description,
+    data,
+    type,
+  ]);
 
   useEffect(() => {
     const main = async () => {
@@ -105,6 +127,11 @@ function AdminArticle({ server, articleType, data }) {
         className="admin-title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+      />
+      <textarea
+        className="admin-subtitle"
+        value={subTitle}
+        onChange={(e) => setSubTitle(e.target.value)}
       />
       <textarea
         className="admin-desc"

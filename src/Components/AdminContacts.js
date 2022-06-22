@@ -13,7 +13,8 @@ function AdminContacts({ server }) {
         headers: { Accept: "*/*" },
       })
         .then((res) => res.json())
-        .then((data) => data);
+        .then((data) => data)
+        .catch((err) => console.log(err));
       setContacts(response.reverse());
       setFetched(true);
     };

@@ -14,7 +14,8 @@ function AdminArticles({ server }) {
         headers: { Accept: "*/*" },
       })
         .then((response) => response.json())
-        .then((data) => data);
+        .then((data) => data)
+        .catch((err) => console.log(err));
       setArticles(response.reverse());
       setFetched(true);
     };

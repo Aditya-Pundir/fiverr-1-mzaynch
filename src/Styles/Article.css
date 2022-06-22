@@ -1,15 +1,16 @@
 .article {
-  width: 15rem;
-  padding: 5%;
-  margin: 5% 10%;
+  width: 20rem;
+  padding: 2%;
   display: flex;
   background: linear-gradient(45deg, var(--darkest), var(--light));
   flex-direction: column;
-  transform: rotate3d(10, 10, 1, 30deg);
+  cursor: pointer;
+  text-decoration: none;
   box-shadow: -0.5rem 0.5rem 1rem 0.01rem var(--translucent-black);
   transition: all 0.5s linear;
   color: var(--white);
   font-size: large;
+  gap: 1rem;
 }
 .article:hover {
   transform: rotate3d(10, 1, 1, 0deg);
@@ -19,14 +20,16 @@
   font-family: "Roboto", sans-serif;
   width: 15rem;
 }
-.desc {
+.subtitle {
   font-family: "Roboto", sans-serif;
   width: 12rem;
 }
 
 @media (max-width: 640px) {
   .article {
-    width: 80%;
+    width: 90%;
     margin: 2% 0;
+    word-wrap: break-word;
+    white-space: normal;
   }
 }

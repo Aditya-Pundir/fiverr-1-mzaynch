@@ -1,12 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../Styles/Article.css";
 
 function Article({ data }) {
   return (
-    <div className="article">
+    <NavLink className="article" to={`/blog/${data._id}`}>
       <h4 className="title">{data.title}</h4>
-      <p className="desc">{data.description}</p>
-    </div>
+      <h5 className="subtitle">{data.subtitle}</h5>
+    </NavLink>
   );
 }
 
