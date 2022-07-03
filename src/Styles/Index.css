@@ -29,6 +29,7 @@ body {
   --darkest: rgb(11, 0, 100);
   --dark: rgb(11, 0, 100);
   --light: rgb(11, 0, 100);
+  --highlight: rgb(255, 68, 68);
   --green: #4ecfb3;
   --white: white;
   --translucent-black: rgba(0, 0, 0, 0.8);

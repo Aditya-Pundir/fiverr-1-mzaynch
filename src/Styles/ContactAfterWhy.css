@@ -5,7 +5,7 @@
   padding: 1%;
 }
 .contact-btn {
-  background: var(--green);
+  background: var(--highlight);
   color: var(--darkest) !important;
   text-decoration: none;
   padding: 0.8rem;

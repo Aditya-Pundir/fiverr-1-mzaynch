@@ -90,7 +90,7 @@
   width: 2rem;
 }
 .chat-button {
-  background: var(--green);
+  background: var(--highlight);
   outline: none;
   border: none;
   border-radius: 100%;

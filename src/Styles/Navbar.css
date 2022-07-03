@@ -22,7 +22,7 @@
   width: 40%;
 }
 .contact {
-  background: var(--green);
+  background: var(--highlight);
   color: var(--darkest) !important;
   padding: 0.8rem;
   border-radius: 0.5rem;
