@@ -27,7 +27,6 @@ function AdminChat({ server }) {
   };
 
   const collapseContacts = () => {
-    console.log(chatContacts.current.style.transform);
     if (window.matchMedia("(max-width: 1000px)").matches) {
       if (chatContacts.current.style.transform === "translateX(0%)") {
         chatContacts.current.style.transform = "translateX(-150%)";
@@ -48,7 +47,6 @@ function AdminChat({ server }) {
   }, [server]);
 
   useEffect(() => {
-    console.log(rooms.length);
     if (rooms.length === 0 && roomsFetched === false) {
       getRooms();
       setRoomsFetched(true);
@@ -89,7 +87,6 @@ function AdminChat({ server }) {
       //   }
       //   console.log(msg.mine);
       // }
-      console.log(response.Messages);
       setClicked(false);
       setChat(response);
     };
