@@ -5,8 +5,8 @@ import "../Styles/AdminChat.css";
 function AdminChat({ server }) {
   // const chatSound = new Audio("assets/chatone.mp3");
   // server = "http://localhost:5000";
-  const socket = io("http://localhost:5001");
-  // const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
+  // const socket = io("http://localhost:5001");
+  const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   const [rooms, setRooms] = useState([]);
   const [chat, setChat] = useState([]);
   const [roomsFetched, setRoomsFetched] = useState(false);
