@@ -111,7 +111,7 @@ function Chat({ server }) {
             className="send-message"
             onClick={() => {
               sendMessage();
-              temp = message;
+              let temp = message;
               temp.mine = true;
               setMessages([...messages, temp]);
             }}

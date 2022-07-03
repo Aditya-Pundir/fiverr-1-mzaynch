@@ -164,7 +164,7 @@ function AdminChat({ server }) {
               className="admin-send-message"
               onClick={() => {
                 sendMessage();
-                temp = message;
+                let temp = message;
                 temp.mine = true;
                 setChat([...chat, temp]);
               }}
