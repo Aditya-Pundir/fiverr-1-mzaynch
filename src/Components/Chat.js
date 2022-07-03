@@ -3,8 +3,8 @@ import { io } from "socket.io-client";
 import "../Styles/Chat.css";
 
 function Chat({ server }) {
-  const socket = io("http://localhost:5001");
-  // const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
+  // const socket = io("http://localhost:5001");
+  const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   // const chatSound = new Audio("assets/chatone.mp3");
   const bottomElement = useRef(null);
   const chatContainer = useRef(null);
