@@ -4,6 +4,7 @@ import "../Styles/AdminChat.css";
 
 function AdminChat({ server }) {
   // const chatSound = new Audio("assets/chatone.mp3");
+  server = "http://localhost:5000";
   const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   const [rooms, setRooms] = useState([]);
   const [chat, setChat] = useState([]);
@@ -45,22 +46,23 @@ function AdminChat({ server }) {
   }, [server]);
 
   useEffect(() => {
+    console.log(rooms.length);
     if (rooms.length === 0 && roomsFetched === false) {
       getRooms();
       setRoomsFetched(true);
     }
   }, [getRooms, rooms.length, roomsFetched]);
 
-  setTimeout(() => {
-    getRooms();
-  }, 15000);
+  // setTimeout(() => {
+  //   getRooms();
+  // }, 15000);
 
   socket.on("receive", (message) => {
     if (Number(message.from) === userID) {
       message.mine = true;
     } else {
       message.mine = false;
-      // chatSound.play();
+      // chatSound.play()
     }
 
     message.Date = "Just now";
@@ -72,18 +74,20 @@ function AdminChat({ server }) {
       const response = await fetch(`${server}/api/chat/getroomchats`, {
         method: "POST",
         headers: { Accept: "*/*", "Content-Type": "application/json" },
-        body: JSON.stringify({ room: name }),
+        body: JSON.stringify({ room: name, userID: String(userID) }),
       })
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
-      for (let msg in response) {
-        if (response[msg].from === String(userID)) {
-          response[msg].mine = true;
-        } else {
-          response[msg].mine = false;
-        }
-      }
+      // for (let msg in response) {
+      //   if (response[msg].from === String(userID)) {
+      //     response[msg].mine = true;
+      //   } else {
+      //     response[msg].mine = false;
+      //   }
+      //   console.log(msg.mine);
+      // }
+      console.log(response.Messages);
       setClicked(false);
       setChat(response);
     };
@@ -164,8 +168,7 @@ function AdminChat({ server }) {
               className="admin-send-message"
               onClick={() => {
                 sendMessage();
-                let temp = message;
-                temp.mine = true;
+                let temp = { message, mine: true };
                 setChat([...chat, temp]);
               }}
             >
