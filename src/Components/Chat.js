@@ -37,16 +37,16 @@ function Chat({ server }) {
         .then((data) => data)
         .catch((err) => console.log(err));
 
-      // response.Messages.forEach((msg) => {
-      //   if (Number(msg.from) === userID) {
-      //     msg.mine = true;
-      //   } else {
-      //     msg.mine = false;
-      //     if (chatContainer.current.display === "flex") {
-      //       // chatSound.play();
-      //     }
-      //   }
-      // });
+      response.Messages.forEach((msg) => {
+        if (Number(msg.from) === userID) {
+          msg.mine = true;
+        } else {
+          msg.mine = false;
+          if (chatContainer.current.display === "flex") {
+            // chatSound.play();
+          }
+        }
+      });
       setMessages(response.Messages);
     };
     getMessages();
