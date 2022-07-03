@@ -81,7 +81,6 @@ function Contact({ server }) {
               autoComplete="false"
             />
             <div className="phoneNum">
-              <p className="plus">+</p>
               <input
                 type="number"
                 name="phone"
@@ -89,9 +88,10 @@ function Contact({ server }) {
                 placeholder="Phone number"
                 required
                 onChange={(e) => {
+                  setChanged(true);
                   setPhone(Number(e.target.value));
                 }}
-                value={changed ? phone : ""}
+                value={phone !== 0 ? phone : ""}
                 // value={phone}
                 // min="10000000000001"
                 max="99999999999999"

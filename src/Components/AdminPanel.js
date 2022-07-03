@@ -3,6 +3,7 @@ import "../Styles/AdminPanel.css";
 import { useNavigate } from "react-router-dom";
 import AdminArticles from "./AdminArticles";
 import AdminContacts from "./AdminContacts";
+import AdminChat from "./AdminChat";
 import Admins from "./Admins";
 
 function AdminPanel({ server }) {
@@ -21,6 +22,9 @@ function AdminPanel({ server }) {
         <button className="nav-item" onClick={() => setContent("admins")}>
           Admins
         </button>
+        <button className="nav-item" onClick={() => setContent("chat")}>
+          Chat
+        </button>
         <button
           className="nav-item logout"
           onClick={() => {
@@ -38,6 +42,8 @@ function AdminPanel({ server }) {
           <AdminContacts server={server} />
         ) : content === "admins" ? (
           <Admins server={server} />
+        ) : content === "chat" ? (
+          <AdminChat server={server} />
         ) : (
           <AdminArticles server={server} />
         )}
