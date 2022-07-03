@@ -15,7 +15,8 @@ function AdminChat({ server }) {
   const bottomElement = useRef(null);
   const [clicked, setClicked] = useState(false);
   const [name, setName] = useState("");
-  const userID = Number(localStorage.getItem("userID"));
+  const userID = 11001010101;
+  // const userID = Number(localStorage.getItem("userID"));
   const [message, setMessage] = useState("");
 
   const sendMessage = () => {
