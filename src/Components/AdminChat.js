@@ -164,6 +164,7 @@ function AdminChat({ server }) {
               className="admin-send-message"
               onClick={() => {
                 sendMessage();
+                setChat([...chat, message]);
               }}
             >
               <span className="material-icons">send</span>
