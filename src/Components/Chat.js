@@ -111,7 +111,9 @@ function Chat({ server }) {
             className="send-message"
             onClick={() => {
               sendMessage();
-              setMessages([...messages, message]);
+              temp = message;
+              temp.mine = true;
+              setMessages([...messages, temp]);
             }}
           >
             <span className="material-icons">send</span>
