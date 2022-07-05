@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { io } from "socket.io-client";
 import "../Styles/Chat.css";
 
 function Chat({ server }) {
   // const socket = io("http://localhost:5001");
+  server = "http://localhost:5000";
   const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   // const chatSound = new Audio("assets/chatone.mp3");
   const bottomElement = useRef(null);
   const chatContainer = useRef(null);
+  const messageInput = useRef(null);
   const [chattable, setChattable] = useState(false);
   const [message, setMessage] = useState("");
   const [username, setUsername] = useState(localStorage.getItem("username"));
@@ -17,6 +19,29 @@ function Chat({ server }) {
   // const userID =
   //   localStorage.getItem("userID") ||
   //   username + new Date().valueOf() + Math.random();
+
+  const sendMessage = useCallback(() => {
+    if (message !== "") {
+      socket.emit("message", { message, from: String(userID) });
+      setMessage("");
+    }
+  }, [message, socket, userID]);
+
+  useEffect(() => {
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        sendMessage();
+        let temp = { message, mine: true };
+        setMessages([...messages, temp]);
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [sendMessage, message, messages]);
+
   useEffect(() => {
     if (username !== null && userID !== null) {
       setChattable(true);
@@ -86,13 +111,6 @@ function Chat({ server }) {
     chatContainer.current.style.display = "none";
   }, [chatContainer]);
 
-  function sendMessage() {
-    if (message !== "") {
-      socket.emit("message", { message, from: String(userID) });
-      setMessage("");
-    }
-  }
-
   return (
     <div className="chat-outer">
       <div className="chat-inner" ref={chatContainer}>
@@ -136,7 +154,7 @@ function Chat({ server }) {
               <input
                 type="text"
                 className="username-field"
-                placeholder="Enter username"
+                placeholder="Enter your name"
                 value={username === null ? "" : username}
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -144,7 +162,11 @@ function Chat({ server }) {
               />
               <button
                 className="set-username"
-                onClick={() => setLoggedIn(true)}
+                onClick={() =>
+                  username !== null && username.trim() !== ""
+                    ? setLoggedIn(true)
+                    : null
+                }
               >
                 <span className="material-icons set-username-icon">east</span>
               </button>
@@ -159,12 +181,14 @@ function Chat({ server }) {
               className="message-input"
               placeholder="Message..."
               value={message}
+              ref={messageInput}
               onChange={(e) => setMessage(e.target.value)}
             />
             <button
               className="send-message"
               onClick={() => {
                 sendMessage();
+                messageInput?.focus();
                 let temp = { message, mine: true };
                 setMessages([...messages, temp]);
               }}

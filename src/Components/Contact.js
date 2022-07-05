@@ -82,7 +82,7 @@ function Contact({ server }) {
             />
             <div className="phoneNum">
               <input
-                type="number"
+                type="tel"
                 name="phone"
                 className="input phone"
                 placeholder="Phone number"
@@ -92,9 +92,8 @@ function Contact({ server }) {
                   setPhone(Number(e.target.value));
                 }}
                 value={phone !== 0 ? phone : ""}
-                // value={phone}
-                // min="10000000000001"
-                max="99999999999999"
+                // value={phone !== 0 ? phone : ""}
+                // max="99999999999999"
               />
             </div>
             <textarea

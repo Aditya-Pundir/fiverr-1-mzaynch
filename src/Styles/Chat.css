@@ -26,9 +26,6 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.messages::-webkit-scrollbar {
-  display: none;
-}
 .message-container {
   display: flex;
   flex-direction: column;

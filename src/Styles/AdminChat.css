@@ -30,6 +30,12 @@
   font-size: large;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.chat-room-delete-icon {
+  color: var(--highlight);
 }
 .chat-content {
   background: var(--maxlucent-black);
@@ -44,7 +50,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 1%;
-  width: 70vw;
+  width: 68vw;
 }
 .admin-sent-container {
   align-items: flex-end;
@@ -56,9 +62,6 @@
   min-height: 60vh;
   overflow-y: scroll;
   width: 100%;
-}
-.admin-messages::-webkit-scrollbar {
-  display: none;
 }
 .admin-message {
   color: var(--black);

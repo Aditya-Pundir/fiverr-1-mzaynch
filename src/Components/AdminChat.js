@@ -12,19 +12,52 @@ function AdminChat({ server }) {
   const [roomsFetched, setRoomsFetched] = useState(false);
   const chatContacts = useRef(null);
   const chatContent = useRef(null);
+  const messageInput = useRef(null);
   const bottomElement = useRef(null);
   const [clicked, setClicked] = useState(false);
   const [name, setName] = useState("");
   const userID = 11001010101;
+  localStorage.setItem("userID", userID);
   // const userID = Number(localStorage.getItem("userID"));
   const [message, setMessage] = useState("");
 
-  const sendMessage = () => {
+  const sendMessage = useCallback(() => {
     if (message !== "") {
       socket.emit("message", { message, from: String(userID) });
       setMessage("");
     }
+  }, [message, socket, userID]);
+
+  const deleteRoom = async (room, i) => {
+    const response = await fetch(`${server}/api/chat/deleteroom`, {
+      method: "DELETE",
+      headers: { Accept: "*/*", "Content-Type": "application/json" },
+      body: JSON.stringify({ name: room }),
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    if (response.Success) {
+      getRooms();
+    }
   };
+
+  useEffect(() => {
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        sendMessage();
+        let temp = { message, mine: true };
+        setChat([...chat, temp]);
+        messageInput?.focus();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [sendMessage, chat, message]);
 
   const collapseContacts = () => {
     if (window.matchMedia("(max-width: 1000px)").matches) {
@@ -43,6 +76,7 @@ function AdminChat({ server }) {
       .then((res) => res.json())
       .then((data) => data.reverse())
       .catch((err) => console.log(err));
+    setChat([]);
     setRooms(response);
   }, [server]);
 
@@ -102,12 +136,12 @@ function AdminChat({ server }) {
   return (
     <div className="admin-chat-outer">
       <div className="chat-contacts " ref={chatContacts}>
-        {rooms.map((room) => {
+        {rooms.map((room, i) => {
           if (room.name !== String(userID)) {
             return (
               <button
                 className="chat-room"
-                key={room._id}
+                key={i}
                 onClick={() => {
                   if (clicked === true) {
                     setName(room.name);
@@ -119,6 +153,20 @@ function AdminChat({ server }) {
                 }}
               >
                 <h5 className="chat-room-name">{room.name.split("^~")[0]}</h5>
+                <span
+                  className="material-icons chat-room-delete-icon"
+                  onClick={() => {
+                    let finalDecision = window.confirm(
+                      "Are you sure you want to delete this room?"
+                    );
+
+                    if (finalDecision === true) {
+                      deleteRoom(room.name, i);
+                    }
+                  }}
+                >
+                  delete
+                </span>
               </button>
             );
           } else {
@@ -161,6 +209,7 @@ function AdminChat({ server }) {
               className="admin-message-input"
               placeholder="Message..."
               value={message}
+              ref={messageInput}
               onChange={(e) => setMessage(e.target.value)}
             />
             <button
