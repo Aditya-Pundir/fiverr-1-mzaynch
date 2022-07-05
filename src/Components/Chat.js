@@ -4,7 +4,7 @@ import "../Styles/Chat.css";
 
 function Chat({ server }) {
   // const socket = io("http://localhost:5001");
-  server = "http://localhost:5000";
+  // server = "http://localhost:5000";
   const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   // const chatSound = new Audio("assets/chatone.mp3");
   const bottomElement = useRef(null);
@@ -27,6 +27,32 @@ function Chat({ server }) {
     }
   }, [message, socket, userID]);
 
+  const getMessages = useCallback(async () => {
+    const response = await fetch(`${server}/api/chat/userchat`, {
+      method: "POST",
+      headers: { Accept: "*/*", "Content-Type": "application/json" },
+      body: JSON.stringify({ room: String(userID) }),
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    console.log(response);
+    if (response.Messages) {
+      response.Messages.forEach((msg) => {
+        if (msg.from === userID) {
+          msg.mine = true;
+        } else {
+          msg.mine = false;
+          if (chatContainer.current.display === "flex") {
+            // chatSound.play();
+          }
+        }
+      });
+    }
+    setMessages(response.Messages);
+  }, [server, userID]);
+
   useEffect(() => {
     const listener = (event) => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
@@ -34,13 +60,14 @@ function Chat({ server }) {
         sendMessage();
         let temp = { message, mine: true };
         setMessages([...messages, temp]);
+        getMessages();
       }
     };
     document.addEventListener("keydown", listener);
     return () => {
       document.removeEventListener("keydown", listener);
     };
-  }, [sendMessage, message, messages]);
+  }, [getMessages, sendMessage, message, messages]);
 
   useEffect(() => {
     if (username !== null && userID !== null) {
@@ -74,34 +101,10 @@ function Chat({ server }) {
   }, [username, loggedIn]);
 
   useEffect(() => {
-    const getMessages = async () => {
-      const response = await fetch(`${server}/api/chat/userchat`, {
-        method: "POST",
-        headers: { Accept: "*/*", "Content-Type": "application/json" },
-        body: JSON.stringify({ room: String(userID) }),
-      })
-        .then((res) => res.json())
-        .then((data) => data)
-        .catch((err) => console.log(err));
-
-      if (response.Messages) {
-        response.Messages.forEach((msg) => {
-          if (msg.from === userID) {
-            msg.mine = true;
-          } else {
-            msg.mine = false;
-            if (chatContainer.current.display === "flex") {
-              // chatSound.play();
-            }
-          }
-        });
-      }
-      setMessages(response.Messages);
-    };
     if (userID !== null) {
       getMessages();
     }
-  }, [server, userID]);
+  }, [getMessages, server, userID]);
 
   useEffect(() => {
     bottomElement.current?.scrollIntoView({ behavior: "smooth" });
