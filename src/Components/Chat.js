@@ -84,19 +84,23 @@ function Chat({ server }) {
         .then((data) => data)
         .catch((err) => console.log(err));
 
-      response.Messages.forEach((msg) => {
-        if (msg.from === userID) {
-          msg.mine = true;
-        } else {
-          msg.mine = false;
-          if (chatContainer.current.display === "flex") {
-            // chatSound.play();
+      if (response.Messages) {
+        response.Messages.forEach((msg) => {
+          if (msg.from === userID) {
+            msg.mine = true;
+          } else {
+            msg.mine = false;
+            if (chatContainer.current.display === "flex") {
+              // chatSound.play();
+            }
           }
-        }
-      });
+        });
+      }
       setMessages(response.Messages);
     };
-    getMessages();
+    if (userID !== null) {
+      getMessages();
+    }
   }, [server, userID]);
 
   useEffect(() => {
