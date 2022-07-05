@@ -37,7 +37,6 @@ function Chat({ server }) {
       .then((data) => data)
       .catch((err) => console.log(err));
 
-    console.log(response);
     if (response.Messages) {
       response.Messages.forEach((msg) => {
         if (msg.from === userID) {
