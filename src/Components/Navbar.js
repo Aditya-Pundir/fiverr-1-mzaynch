@@ -82,7 +82,7 @@ function Navbar() {
           <NavLink
             activeclassname="active"
             exact="true"
-            className="link contact link-responsive"
+            className="link link-responsive contact"
             to="/contact"
             onClick={() => {
               collapseNav();
