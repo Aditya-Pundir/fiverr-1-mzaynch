@@ -118,7 +118,7 @@ function AdminChat({ server }) {
                   collapseContacts();
                 }}
               >
-                <h5 className="chat-room-name">{room.name}</h5>
+                <h5 className="chat-room-name">{room.name.split("^~")[0]}</h5>
               </button>
             );
           } else {
