@@ -164,11 +164,11 @@ function AdminChat({ server }) {
                 }}
               >
                 <h5 className="chat-room-name">{room.name.split("^~")[0]}</h5>
-                {/* {room.unreadNum >= 1 ? ( */}
-                <div className="unread">{room.unreadNum}</div>
-                {/* ) : (
+                {room.unreadNum >= 1 ? (
+                  <div className="unread">{room.unreadNum}</div>
+                ) : (
                   ""
-                )} */}
+                )}
                 <span
                   className="material-icons chat-room-delete-icon"
                   onClick={() => {
