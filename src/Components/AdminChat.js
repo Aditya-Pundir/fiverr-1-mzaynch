@@ -21,7 +21,7 @@ function AdminChat({ server }) {
   // const userID = Number(localStorage.getItem("userID"));
   const [message, setMessage] = useState("");
 
-  const sendMessage = useCallback(() => {
+  const sendMessage = useCallback(async () => {
     if (message !== "") {
       socket.emit("message", { message, from: String(userID) });
       setMessage("");
@@ -76,7 +76,8 @@ function AdminChat({ server }) {
       .then((res) => res.json())
       .then((data) => data.reverse())
       .catch((err) => console.log(err));
-    setChat([]);
+    // setChat([]);
+    // console.log(response);
     setRooms(response);
   }, [server]);
 
@@ -103,6 +104,21 @@ function AdminChat({ server }) {
     setChat([...chat, message]);
   });
 
+  const resetUnread = useCallback(async () => {
+    const response = await fetch(`${server}/api/chat/unread`, {
+      method: "PUT",
+      headers: { Accept: "*/*", "Content-Type": "application/json" },
+      body: JSON.stringify({ name: String(name), unread: 0 }),
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    getRooms();
+
+    console.log(response);
+  }, [server, getRooms, name]);
+
   useEffect(() => {
     const getRoomChats = async () => {
       const response = await fetch(`${server}/api/chat/getroomchats`, {
@@ -113,14 +129,7 @@ function AdminChat({ server }) {
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
-      // for (let msg in response) {
-      //   if (response[msg].from === String(userID)) {
-      //     response[msg].mine = true;
-      //   } else {
-      //     response[msg].mine = false;
-      //   }
-      //   console.log(msg.mine);
-      // }
+      resetUnread();
       setClicked(false);
       setChat(response);
     };
@@ -128,7 +137,9 @@ function AdminChat({ server }) {
       getRoomChats();
     }
     socket.emit("create", userID, name);
-  }, [server, userID, clicked, name, socket]);
+  }, [server, userID, clicked, name, socket, resetUnread]);
+
+  // setTimeout(getRooms(), 20000);
 
   useEffect(() => {
     bottomElement.current?.scrollIntoView({ behavior: "smooth" });
@@ -153,6 +164,11 @@ function AdminChat({ server }) {
                 }}
               >
                 <h5 className="chat-room-name">{room.name.split("^~")[0]}</h5>
+                {/* {room.unreadNum >= 1 ? ( */}
+                <div className="unread">{room.unreadNum}</div>
+                {/* ) : (
+                  ""
+                )} */}
                 <span
                   className="material-icons chat-room-delete-icon"
                   onClick={() => {

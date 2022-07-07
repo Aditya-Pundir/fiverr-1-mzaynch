@@ -20,12 +20,36 @@ function Chat({ server }) {
   //   localStorage.getItem("userID") ||
   //   username + new Date().valueOf() + Math.random();
 
-  const sendMessage = useCallback(() => {
+  const sendMessage = useCallback(async () => {
     if (message !== "") {
-      socket.emit("message", { message, from: String(userID) });
+      socket.emit("message", {
+        message,
+        room: String(userID),
+        from: String(userID),
+        // unread: response.unreadNum + 1,
+      });
       setMessage("");
     }
-  }, [message, socket, userID]);
+    const room = await fetch(`${server}/api/chat/getroom`, {
+      method: "POST",
+      headers: { Accept: "*/*", "Content-Type": "application/json" },
+      body: JSON.stringify({ name: String(userID) }),
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    await fetch(`${server}/api/chat/unread`, {
+      method: "PUT",
+      headers: { Accept: "*/*", "Content-Type": "application/json" },
+      body: JSON.stringify({ name: userID, unread: room.unreadNum + 1 }),
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((err) => console.log(err));
+
+    // console.log(room.unreadNum + 1);
+  }, [server, message, socket, userID]);
 
   const getMessages = useCallback(async () => {
     const response = await fetch(`${server}/api/chat/userchat`, {
@@ -132,8 +156,8 @@ function Chat({ server }) {
           {chattable === true ? (
             <div className="message-container received-container">
               <span className="message received">
-                Hi {username}, our team will get back to you as soon as
-                possible.
+                Hi {username}, please enter your query so our team can respond
+                to you as soon as possible.
               </span>
               {/* <span className="msg-time">{msg.Date}</span> */}
             </div>
