@@ -129,7 +129,6 @@ function AdminChat({ server }) {
 
   useEffect(() => {
     const getRoomChats = async () => {
-      console.log(name);
       const response = await fetch(`${server}/api/chat/getroomchats`, {
         method: "POST",
         headers: { Accept: "*/*", "Content-Type": "application/json" },
@@ -138,6 +137,7 @@ function AdminChat({ server }) {
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
+      console.log(response);
       setClicked(false);
       setChat(response);
       resetUnread();
@@ -151,6 +151,9 @@ function AdminChat({ server }) {
   // setTimeout(getRooms(), 20000);
 
   useEffect(() => {
+    if (chat.length > 0) {
+      setName(chat[0]?.room);
+    }
     bottomElement.current?.scrollIntoView({ behavior: "smooth" });
   }, [chat]);
   return (
