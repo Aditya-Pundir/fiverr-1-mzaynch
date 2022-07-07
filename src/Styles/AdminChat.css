@@ -17,9 +17,6 @@
   /* transform: translateX(-150%); */
   transition: all 0.5s ease-in-out;
 }
-.chat-contacts::-webkit-scrollbar {
-  display: none;
-}
 .unread {
   background: var(--green);
   color: var(--black);
