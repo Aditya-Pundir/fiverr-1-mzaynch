@@ -221,6 +221,7 @@ function Chat({ server }) {
                 messageInput?.focus();
                 let temp = { message, mine: true };
                 setMessages([...messages, temp]);
+                messageInput?.focus();
               }}
             >
               <span className="material-icons">send</span>

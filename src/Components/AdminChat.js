@@ -21,6 +21,11 @@ function AdminChat({ server }) {
   // const userID = Number(localStorage.getItem("userID"));
   const [message, setMessage] = useState("");
 
+  // const moveArray = (arr, from, to) => {
+  //   arr.splice(to, 0, arr.splice(from, 1)[0]);
+  //   return arr;
+  // };
+
   const sendMessage = useCallback(async () => {
     if (message !== "") {
       socket.emit("message", { message, from: String(userID) });
@@ -70,7 +75,7 @@ function AdminChat({ server }) {
   };
 
   const getRooms = useCallback(async () => {
-    const response = await fetch(`${server}/api/chat/getrooms`, {
+    let response = await fetch(`${server}/api/chat/getrooms`, {
       headers: { Accept: "*/*" },
     })
       .then((res) => res.json())
@@ -78,6 +83,11 @@ function AdminChat({ server }) {
       .catch((err) => console.log(err));
     // setChat([]);
     // console.log(response);
+    // for (let room in response) {
+    //   if (response[room].unread >= 1) {
+    //     response = moveArray(response, room, 0);
+    //   }
+    // }
     setRooms(response);
   }, [server]);
 
@@ -105,7 +115,7 @@ function AdminChat({ server }) {
   });
 
   const resetUnread = useCallback(async () => {
-    const response = await fetch(`${server}/api/chat/unread`, {
+    await fetch(`${server}/api/chat/unread`, {
       method: "PUT",
       headers: { Accept: "*/*", "Content-Type": "application/json" },
       body: JSON.stringify({ name: String(name), unread: 0 }),
@@ -115,12 +125,11 @@ function AdminChat({ server }) {
       .catch((err) => console.log(err));
 
     getRooms();
-
-    console.log(response);
   }, [server, getRooms, name]);
 
   useEffect(() => {
     const getRoomChats = async () => {
+      console.log(name);
       const response = await fetch(`${server}/api/chat/getroomchats`, {
         method: "POST",
         headers: { Accept: "*/*", "Content-Type": "application/json" },
@@ -129,9 +138,9 @@ function AdminChat({ server }) {
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
-      resetUnread();
       setClicked(false);
       setChat(response);
+      resetUnread();
     };
     if (clicked === true) {
       getRoomChats();
@@ -194,6 +203,11 @@ function AdminChat({ server }) {
         <button className="admin-chat-menu" onClick={() => collapseContacts()}>
           <span className="material-icons">menu</span>
         </button>
+        {name !== "" ? (
+          <div className="admin-chat-username-container">
+            {name.split("^~")[0]}
+          </div>
+        ) : null}
         <div className="admin-messages">
           {chat.map((msg, i) => {
             return msg.mine === true ? (
@@ -234,6 +248,7 @@ function AdminChat({ server }) {
                 sendMessage();
                 let temp = { message, mine: true };
                 setChat([...chat, temp]);
+                messageInput?.focus();
               }}
             >
               <span className="material-icons">send</span>
