@@ -3,11 +3,13 @@ import { io } from "socket.io-client";
 import "../Styles/AdminChat.css";
 
 function AdminChat({ server }) {
-  // const chatSound = new Audio("assets/chatone.mp3");
+  const chatSound = new Audio("assets/chatone.mp3");
+  chatSound.loop = false;
   // server = "http://localhost:5000";
   // const socket = io("http://localhost:5001");
   const socket = io("https://fiverr-1-mzaynch-chat.herokuapp.com");
   const [rooms, setRooms] = useState([]);
+  const [prevChat, setPrevChat] = useState([]);
   const [chat, setChat] = useState([]);
   const [roomsFetched, setRoomsFetched] = useState(false);
   const chatContacts = useRef(null);
@@ -17,6 +19,7 @@ function AdminChat({ server }) {
   const [clicked, setClicked] = useState(false);
   const [name, setName] = useState("");
   const userID = 11001010101;
+  let chatLasts = [];
   localStorage.setItem("userID", userID);
   // const userID = Number(localStorage.getItem("userID"));
   const [message, setMessage] = useState("");
@@ -107,10 +110,22 @@ function AdminChat({ server }) {
       message.mine = true;
     } else {
       message.mine = false;
-      // chatSound.play()
     }
-
     message.Date = "Just now";
+
+    let toSet = [...chat, message];
+    console.log(chatLasts.indexOf(chat[chat.length - 1].time));
+
+    if (chatLasts.indexOf(chat[chat.length - 1].time) === -1) {
+      if (chat[chat.length - 1] !== toSet[toSet.length - 1]) {
+        // console.log(toSet[toSet.length - 1]);
+        if (toSet[toSet.length - 1].mine === false) {
+          chatLasts.push(chat[chat.length - 1].time);
+          chatSound.play();
+        }
+      }
+    }
+    setPrevChat([...chat]);
     setChat([...chat, message]);
   });
 
@@ -137,7 +152,6 @@ function AdminChat({ server }) {
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
-      console.log(response);
       setClicked(false);
       setChat(response);
       resetUnread();
@@ -146,7 +160,7 @@ function AdminChat({ server }) {
       getRoomChats();
     }
     socket.emit("create", userID, name);
-  }, [server, userID, clicked, name, socket, resetUnread]);
+  }, [server, userID, clicked, name, socket, resetUnread, chat]);
 
   // setTimeout(getRooms(), 20000);
 
@@ -154,8 +168,9 @@ function AdminChat({ server }) {
     if (chat.length > 0) {
       setName(chat[0]?.room);
     }
+    resetUnread();
     bottomElement.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chat]);
+  }, [chat, prevChat, resetUnread]);
   return (
     <div className="admin-chat-outer">
       <div className="chat-contacts " ref={chatContacts}>

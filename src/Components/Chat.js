@@ -28,6 +28,8 @@ function Chat({ server }) {
         from: String(userID),
         // unread: response.unreadNum + 1,
       });
+      let temp = { message, mine: true };
+      setMessages([...messages, temp]);
       setMessage("");
     }
     const room = await fetch(`${server}/api/chat/getroom`, {
@@ -49,7 +51,7 @@ function Chat({ server }) {
       .catch((err) => console.log(err));
 
     // console.log(room.unreadNum + 1);
-  }, [server, message, socket, userID]);
+  }, [server, message, socket, userID, messages]);
 
   const getMessages = useCallback(async () => {
     const response = await fetch(`${server}/api/chat/userchat`, {
@@ -217,10 +219,9 @@ function Chat({ server }) {
             <button
               className="send-message"
               onClick={() => {
-                sendMessage();
-                messageInput?.focus();
                 let temp = { message, mine: true };
                 setMessages([...messages, temp]);
+                sendMessage();
                 messageInput?.focus();
               }}
             >
