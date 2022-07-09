@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(45deg, var(--darkest), var(--light));
-  color: var(--white);
+  color: var(--darkest);
 }
 .service-packs-container {
   height: 100%;
@@ -16,6 +16,7 @@
 }
 .service-packs-heading {
   /* width: 30%; */
+  color: var(--white) !important;
   padding: 1%;
   text-shadow: 0.2rem 0.2rem 0.5rem var(--translucent-black);
 }
@@ -23,25 +24,26 @@
   line-height: 1rem;
   margin-top: 1rem;
 }
-.package {
-  background: conic-gradient(var(--darkest), var(--light));
+.service-package {
+  /* background: conic-gradient(var(--darkest), var(--light)); */
+  background: #ffff00;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  transform: rotate3d(10, 10, 1, 30deg);
+  /* transform: rotate3d(10, 10, 1, 30deg); */
   box-shadow: -1rem 0.5rem 2rem 0.01rem var(--translucent-black);
   height: 20rem;
   width: 18rem;
   padding: 2%;
   text-align: center;
   font-size: large;
-  transition: all 0.5s linear;
+  /* transition: all 0.5s linear; */
 }
-.package:hover {
+/* .package:hover {
   transform: rotate3d(10, 0, 0, 0deg);
   box-shadow: -1rem 2rem 4rem 0.01rem var(--translucent-black);
-}
+} */
 @media (max-width: 1000px) {
   .service-packs-outer {
     flex-direction: column;
@@ -59,7 +61,7 @@
 @media (max-width: 850px) {
   .service-packs-container {
     flex-direction: column;
-    height: 130vh;
+    height: 150vh;
   }
   .service-packs-heading {
     width: 90%;

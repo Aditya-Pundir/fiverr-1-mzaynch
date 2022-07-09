@@ -11,7 +11,7 @@ function ServicePackages() {
         </p>
       </div>
       <div className="service-packs-container">
-        <div className="package">
+        <div className="service-package">
           <h2 className="package-heading">Monthly Bookkeeping Support</h2>
           <p className="package-desc">
             Ongoing monthly bookkeeping support to help your business manage
@@ -19,7 +19,7 @@ function ServicePackages() {
             Financial Statements monthly.
           </p>
         </div>
-        <div className="package">
+        <div className="service-package">
           <h2 className="package-heading">Backlog Bookkeeping</h2>
           <p className="package-desc">
             Rectifying errors in bookkeeping and helping with lagging backlog
@@ -27,7 +27,7 @@ function ServicePackages() {
             for the period.
           </p>
         </div>
-        <div className="package">
+        <div className="service-package">
           <h2 className="package-heading">Budgeting and Forecasting</h2>
           <p className="package-desc">
             Budgeting and forecasting for upcoming years for better
