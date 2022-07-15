@@ -10,7 +10,7 @@ import CEO from "./CEO";
 import "../Styles/Home.css";
 
 function Home({ server }) {
-  document.title = "Nano Book Keepers | Home";
+  document.title = "Nano Bookkeepers | Home";
   return (
     <>
       <Banner server={server} />

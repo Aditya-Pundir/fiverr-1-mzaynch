@@ -6,7 +6,7 @@ import "../Styles/Contact.css";
 function Contact({ server }) {
   const add = `${server}/api/contacts/add`;
   const navigate = useNavigate();
-  document.title = "Nano Book Keepers | Contact";
+  document.title = "Nano Bookkeepers | Contact";
   const [changed, setChanged] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");

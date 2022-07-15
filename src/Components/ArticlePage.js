@@ -3,7 +3,8 @@ import "../Styles/ArticlePage.css";
 import { useParams } from "react-router-dom";
 
 function ArticlePage({ server }) {
-  const { id } = useParams();
+  // const { id } = useParams();
+  const { title } = useParams();
   const getArticleUrl = `${server}/api/articles/get`;
   const [fetched, setFetched] = useState(false);
   const [article, setArticle] = useState({});
@@ -13,7 +14,7 @@ function ArticlePage({ server }) {
       const response = await fetch(getArticleUrl, {
         method: "POST",
         headers: { Accept: "*/*", "Content-Type": "application/json" },
-        body: JSON.stringify({ _id: id }),
+        body: JSON.stringify({ title: title.replaceAll("_", " ") }),
       })
         .then((res) => res.json())
         .then((data) => data)
@@ -28,7 +29,7 @@ function ArticlePage({ server }) {
     if (!fetched) {
       main();
     }
-  }, [article, id, getArticleUrl, fetched]);
+  }, [article, title, getArticleUrl, fetched]);
 
   return (
     <div className="article-page-container">

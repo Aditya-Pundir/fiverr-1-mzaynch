@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home server={serverLocation} />} />
           <Route path="/blog" element={<Blog server={serverLocation} />} />
           <Route
-            path="/blog/:id"
+            path="/blog/:title"
             element={<ArticlePage server={serverLocation} />}
           />
           <Route

@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import "../Styles/Blog.css";
 
 function Blog({ server }) {
-  document.title = "Nano Book Keepers | Blog";
+  document.title = "Nano Bookkeepers | Blog";
   return (
     <>
       <div className="articles-container">

@@ -5,7 +5,7 @@ import "../Styles/AdminLogin.css";
 function AdminLogin({ server }) {
   const login = `${server}/api/admin/login`;
   const navigate = useNavigate();
-  document.title = "Nano Book Keepers | Admin";
+  document.title = "Nano Bookkeepers | Admin";
   const [changed, setChanged] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
